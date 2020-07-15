@@ -1,0 +1,1623 @@
+*{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*Scrollbar*/
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(14, 14, 14, 0.91);
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .restaurantBoard ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    .restaurantBoard ::-webkit-scrollbar-thumb {
+        background: rgba(14, 14, 14, 0.91);
+        border-radius: 5px;
+    }
+
+/*Header*/
+
+header{
+    width: 100vw;
+    height: 50px;
+    padding: 0 50px 0 50px;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 2;
+}
+
+    .header{
+        height: 100%;
+    }
+
+    .headerLeft{
+        width: 60%;
+        float: left;
+    }
+
+        .logoLink{
+            color: rgba(14, 14, 14, 0.91);
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+            width: 25%;
+            height: 100%;
+            text-align: left;
+            font-size: 25px;
+            padding: 10px 0 10px 0;
+            font-weight: bold;
+            transition: 1s;
+        }
+
+        .logoLink:hover{
+            color: rgba(35, 35, 35, 0.91);
+            text-shadow: rgba(227, 227, 227, 0.91) 1px 1px;
+        }
+
+    .headerRight{
+        width: 40%;
+        float: right;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .headerItem{
+            width: auto;
+            height: 100%;
+        }
+
+            .headerMenu{
+                width: auto;
+                height: 100%;
+                list-style-type: none;
+                display: flex;
+                justify-content: right;
+                padding: 0;
+            }
+
+                .headerMenu li{
+                     display: block;
+                     height: 100%;
+                     width: auto;
+                }
+
+                    .headerMenu li a{
+                        display: block;
+                        height: 100%;
+                        width: auto;
+                        text-decoration: none;
+                        color: rgba(14, 14, 14, 0.91);
+                        cursor: pointer;
+                        text-align: center;
+                        font-size: 20px;
+                        padding: 13px;
+                        margin: auto;
+                        box-sizing: border-box;
+                        transition: 1s;
+                    }
+
+                    .headerMenu li a:hover{
+                        color: rgba(35, 35, 35, 0.91);
+                        text-shadow: rgba(227, 227, 227, 0.91) 1px 1px;
+                        border-bottom: 2px solid rgba(14, 14, 14, 0.91);
+                    }
+
+                    .underline{
+                        color: rgba(35, 35, 35, 0.91);
+                        text-shadow: rgba(227, 227, 227, 0.91) 1px 1px;
+                        border-bottom: 2px solid rgba(14, 14, 14, 0.91);
+                    }
+
+    main{
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        max-height: 1200vh;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+        .frame{
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            background-image: url("../graphics/krevetaW.jpg");
+            background-size: contain;
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+
+            .search{
+                position: relative;
+                top: 50%;
+                left: 35%;
+                transform: translate(-72%, -70%);
+                width: 50%;
+                height: 60px;
+                margin: auto;
+                background-color: #2f3640;
+                border-radius: 40px;
+                padding: 5px;
+                box-sizing: border-box;
+                z-index: 1;
+                opacity: 0.95;
+            }
+
+            .searchButton{
+                color: white;
+                float: right;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #2f3640;
+                border: 1px solid #2f3640;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.5s;
+            }
+
+            .searchButton:hover{
+                border: 1px solid white;
+            }
+
+            .searchInput{
+                border: none;
+                background: none;
+                outline: none;
+                float: left;
+                padding: 0 20px;
+                margin: 5px;
+                color: white;
+                font-size: 16px;
+                line-height: 40px;
+                width: 80%;
+            }
+
+    .offer{
+        min-height: 100vh;
+        max-height: 500vh;
+        width: 100%;
+        padding: 8% 12%;
+        box-sizing: border-box;
+        background-color: white;
+    }
+
+        .offer h1{
+            margin-left: 1.5%;
+            margin-bottom: 20px;
+            color: rgba(14, 14, 14, 0.91);
+            font-size: 40px;
+        }
+
+        .restaurantOffer{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+            .restaurantTile{
+                display: block;
+                width: 30%;
+                height: 400px;
+                border-radius: 10px;
+                margin: 1.5%;
+                align-self: center;
+                background-color: rgba(14, 14, 14, 0.91);
+                text-decoration: none;
+                color: white;
+                text-align: center;
+                transition: 0.5s;
+            }
+
+            .restaurantTile:hover{
+                opacity: 0.9;
+            }
+
+                .restaurantImage{
+                    height: 50%;
+                    width: 100%;
+                    background-image: url("../graphics/notfound.jpg");
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                .restaurantName{
+                    height: 20%;
+                    width: 100%;
+                    padding: 8% 0 7% 0;
+                    box-sizing: border-box;
+                    font-size: 30px;
+                }
+
+                .restaurantSubtitle{
+                    height: 5%;
+                    width: 100%;
+                }
+
+                .restaurantTags{
+                    height: 25%;
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    padding: 7% 0 14% 0;
+                    box-sizing: border-box;
+                }
+
+                    .restaurantTag{
+                        height: 20px;
+                        width: auto;
+                        padding: 5px;
+                        border: 2px solid white;
+                        border-radius: 5px;
+                        margin: auto;
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        transition: 0.5s;
+                    }
+
+                    .restaurantTag:hover{
+                        background-color: white;
+                        color: rgba(14, 14, 14, 0.91);
+                    }
+
+footer{
+    width: 100%;
+    height: 70vh;
+    background-color: rgba(14, 14, 14, 0.91);
+    color: white;
+    box-sizing: border-box;
+}
+
+    .topFooter{
+        width: 100%;
+        height: 30%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+        footer svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: white;
+            fill: rgba(14, 14, 14, 0.91);
+            overflow: hidden;
+        }
+
+    .bottomFooter{
+        width: 100%;
+        height: 70%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+        .footer {
+            width: 50%;
+            height: 90%;
+            padding: 1% 10% 6% 10%;
+            box-sizing: border-box;
+        }
+
+            .footer h2{
+                margin-bottom: 10px;
+            }
+
+            .footer ul{
+                list-style-type: none;
+                padding: 4px;
+            }
+
+                .footer li{
+                    padding: 3px;
+                }
+
+                    .footer li a{
+                        text-decoration: none;
+                        color: white;
+                    }
+
+        .footerLeft{
+            float: left;
+            padding: 10% 6% 10% 25%;
+        }
+
+        .footerRight{
+            float: right;
+        }
+
+        .footerBottom{
+            width: 100%;
+            height: 10%;
+            text-align: center;
+        }
+
+/*Search page*/
+
+.leftSideScreen{
+    margin-top: 50px;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 5% 2.5% 5% 5%;
+}
+
+    .searchPageSearchForm{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin: 0 0 30px 0;
+        background-color: rgba(14, 14, 14, 0.91);
+        border-radius: 40px;
+        padding: 5px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+        .searchPageSearchButton{
+            color: white;
+            float: right;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(14, 14, 14, 0);
+            border: 1px solid rgba(14, 14, 14, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .searchPageSearchButton:hover{
+            border: 1px solid white;
+        }
+
+        .searchPageSearchInput{
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0 20px;
+            color: white;
+            font-size: 16px;
+            line-height: 40px;
+            width: 80%;
+        }
+
+    .foundedRestaurant{
+        display: block;
+        width: 100%;
+        height: 150px;
+        box-sizing: border-box;
+        border: 2px solid rgba(14, 14, 14, 0.91);
+        border-radius: 20px;
+        margin: auto;
+        margin-top: 1%;
+        margin-bottom: 10px;
+        align-self: center;
+        background-color: white;
+        text-decoration: none;
+        color: rgba(14, 14, 14, 0.91);
+        text-align: center;
+        transition-property: background-color, color, border;
+        transition-duration: 0.5s;
+    }
+
+    .foundedRestaurant:hover{
+       /* opacity: 0.9;*/
+        background-color: rgba(14, 14, 14, 0.91);
+        color: white;
+    }
+
+    .foundedRestaurant:hover .foundedRestaurantTag{
+        border-color: white;
+    }
+
+        .foundedRestaurantImage{
+            float: left;
+            height: 100%;
+            width: 40%;
+            background-image: url("../graphics/notfound.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            opacity: 0.8;
+        }
+
+        .foundedRestaurantContent{
+            float: right;
+            height: 100%;
+            width: 60%;
+        }
+
+            .foundedRestaurantName{
+                height: 40%;
+                width: 100%;
+                padding: 15px 0;
+                box-sizing: border-box;
+                font-size: 30px;
+            }
+
+            .foundedRestaurantSubtitle{
+                height: 20%;
+                width: 100%;
+               /*padding: 5px 0px;.*/
+                box-sizing: border-box;
+            }
+
+            .foundedRestaurantTags{
+                height: 40%;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+                .foundedRestaurantTag{
+                    height: 20px;
+                    width: auto;
+                    padding: 5px;
+                    border: 2px solid rgba(14, 14, 14, 0.91);
+                    border-radius: 5px;
+                    margin: auto;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    transition-property: background-color, border;
+                    transition-duration: 0.5s;
+                }
+
+                .foundedRestaurantTag:hover{
+                    background-color: rgba(110, 110, 110, 0.91);
+                }
+
+.rightSideScreen{
+    margin-top: 50px;
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+    padding: 5% 5% 5% 2.5%;
+}
+
+    .userReservation{
+        width: 100%;
+        min-height: 200px;
+        max-height: 400px;
+        margin-bottom: 10px;
+    }
+
+        .notRegisteredUserReservation{
+            width: 100%;
+            height: 200px;
+            margin: auto;
+            border: 2px dashed rgba(14, 14, 14, 0.91);
+            border-radius: 10px;
+            line-height: 200px;
+        }
+
+            .notRegisteredUserReservation p{
+                margin: auto;
+                text-align: center;
+            }
+
+        .listOfReservations{
+            width: 100%;
+            height: 160px; /*p5edelat*/
+            overflow-y: scroll;
+            background-color: #f9f9f9;
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+
+            .userReservation table{
+                width: 100%;
+                height: 100%;
+            }
+
+                .userReservation table th{
+                    text-align: left;
+                }
+
+    .recommendation{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+        .recommendation .restaurantTile{
+            display: block;
+            width: 49%;
+            height: 500px;
+            border-radius: 10px;
+            margin: 1.5% 0 1.5% 0.4%;
+            align-self: center;
+            background-color: rgba(14, 14, 14, 0.91);
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+            .recommendation .restaurantImage{
+                height: 35%;
+            }
+
+            .recommendation .restaurantName{
+                height: 15%;
+            }
+
+            .recommendation .restaurantSubtitle{
+                height: 8%;
+            }
+
+            .recommendation .restaurantDescription{
+                height: 25%;
+                padding: 0 30px;
+                text-align: justify;
+            }
+
+            .recommendation .restaurantTags{
+                height: 17%;
+            }
+
+/*Login*/
+
+.loginContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .loginInformation{
+        width: 37%;
+        height: 100%;
+        margin-top: 15vh;
+        box-sizing: border-box;
+        padding: 5% 5%;
+        text-align: center;
+    }
+
+        .loginInformation p {
+            font-size: 40px;
+            margin-top: 30px;
+        }
+
+    .loginWindow{
+        width: 25%;
+        height: 80vh;
+        margin: auto;
+        margin-top: 12vh;
+        border: 2px dashed rgba(14, 14, 14, 0.91);
+        border-radius: 10px;
+        padding: 3% 0;
+        box-sizing: border-box;
+    }
+
+        .loginImage{
+            width: 100%;
+            height: 40%;
+            text-align: center;
+            box-sizing: border-box;
+            padding-bottom: 10px;
+        }
+
+            .loginImage img{
+                width: auto;
+                height: 100%;
+                margin: auto;
+            }
+
+        .loginForm{
+            height: 50%;
+            padding-top: 10px;
+        }
+
+            .loginInput{
+                width: 80%;
+                height: 50px;
+                margin: 5% 10% 0 10%;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                border: 2px solid rgba(14, 14, 14, 0.91);
+                color: rgba(14, 14, 14, 0.91);
+                border-radius: 10px;
+                transition-property: box;
+                transition-duration: 0.5s;
+            }
+
+            .loginInput:hover{
+                box-shadow: 0.5px 0.5px rgba(14, 14, 14, 0.6);
+            }
+
+            .loginForm p {
+                width: 80%;
+                margin: auto;
+                text-align: justify;
+            }
+
+            .loginButton{
+                width: 30%;
+                height: 50px;
+                box-sizing: border-box;
+                margin: 10% 35%;
+                border: 2px solid white;
+                border-radius: 10px;
+                background-color: rgba(14, 14, 14, 0.91);
+                color: white;
+                cursor: pointer;
+                transition-property: color, background-color, border;
+                transition-duration: 1s;
+            }
+
+            .loginButton:hover{
+                background-color: white;
+                border-color: rgba(14, 14, 14, 0.91);
+                color: rgba(14, 14, 14, 0.91);
+            }
+
+    .loginOthers{
+        width: 37%;
+        height: 100%;
+        margin-top: 15vh;
+        padding: 10% 5% 10% 4%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+        .loginOptions{
+            padding-top: 5%;
+        }
+
+/*Registration*/
+
+.registrationContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .registrationInformation{
+        width: 37%;
+        height: 100%;
+        margin-top: 9vh;
+        box-sizing: border-box;
+        padding: 1% 5%;
+    }
+
+        .registrationInformation p {
+            font-size: 16px;
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        .redLetters{
+             color: red;
+        }
+
+        .greenLetters{
+            color: #0fb500;
+        }
+
+        .redLettersMargin10{
+            margin-top: 10px;
+            color: red;
+        }
+
+        .greenLettersMargin10{
+            color: #0fb500;
+            margin-top: 10px;
+        }
+
+    .registrationWindow{
+        width: 25%;
+        height: auto;
+        margin: auto;
+        margin-top: 11vh;
+        border: 2px dashed rgba(14, 14, 14, 0.91);
+        border-radius: 10px;
+        padding: 3% 0 0 0;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .registrationForm{
+        height: auto;
+    }
+
+        .registrationForm form{
+            height: auto;
+            width: 100%;
+        }
+
+        .loginInput{
+            width: 80%;
+            height: 50px;
+            margin: 0 10% 5% 10%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            border: 2px solid rgba(14, 14, 14, 0.91);
+            color: rgba(14, 14, 14, 0.91);
+            border-radius: 10px;
+            transition-property: box;
+            transition-duration: 0.5s;
+        }
+
+        .registrationForm p{
+            width: 80%;
+            margin: auto;
+            margin-bottom: 5px;
+            color: red;
+        }
+
+
+        .loginInput:hover{
+            box-shadow: 0.5px 0.5px rgba(14, 14, 14, 0.6);
+        }
+
+        .registrationForm .checkBox{
+            height: auto;
+            width: 80%;
+            margin: 0 10% 0 10%;
+            box-sizing: border-box;
+        }
+
+        .loginButton{
+            width: 30%;
+            height: 50px;
+            box-sizing: border-box;
+            margin: 10% 35%;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: rgba(14, 14, 14, 0.91);
+            color: white;
+            cursor: pointer;
+            transition-property: color, background-color, border;
+            transition-duration: 1s;
+        }
+
+        .loginButton:hover{
+            background-color: white;
+            border-color: rgba(14, 14, 14, 0.91);
+            color: rgba(14, 14, 14, 0.91);
+        }
+
+    .registrationOthers{
+        width: 37%;
+        height: 100%;
+        margin-top: 9vh;
+        box-sizing: border-box;
+        padding: 1% 5%;
+    }
+
+        .registrationOthers p {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .registrationOptions{
+            padding-top: 20px;
+        }
+
+/*Board*/
+
+.userBoard{
+    min-height: 100vh;
+    max-height: 400vh;
+    width: 100%;
+    padding-top: 70px;
+}
+
+    .userFirstBar{
+        margin-top: 50px;
+        width: 50%;
+        height: 100%;
+        float: left;
+        box-sizing: border-box;
+        padding: 5% 2.5% 5% 5%;
+    }
+
+        .userBoardReservation{
+            margin-top: 50px;
+        }
+
+            .userBoardReservation .listOfReservations{
+                height: auto;
+                overflow-y: initial;
+                background-color: #fbfbfb;
+                padding: 0;
+                margin-top: 10px;
+                box-sizing: border-box;
+            }
+
+                .listOfReservations table{
+                    width: 100%;
+                    height: auto;
+                    border-collapse: collapse;
+                }
+
+                    .listOfReservations tr:hover td{
+                        background-color: #f5f5f5;
+                    }
+
+                        .listOfReservations th{
+                            text-align: left;
+                            width: auto;
+                            height: 40px;
+                            padding: 0 10px;
+                            box-sizing: border-box;
+                        }
+
+                        .listOfReservations td{
+                            width: auto;
+                            height: 40px;
+                            padding: 0 10px;
+                            box-sizing: border-box;
+                            border-spacing: 0;
+                        }
+
+                            .listOfReservations td a{
+                                margin: 5% 0;
+                                display: block;
+                                width: 100%;
+                                height: 90%;
+                                color: white;
+                                background-color: rgba(14, 14, 14, 0.91);
+                                text-align: center;
+                                text-decoration: none;
+                                border: 2px solid rgba(14, 14, 14, 0.91);
+                                border-radius: 5px;
+                                transition-property: color, background-color;
+                                transition-duration: 0.5s;
+                                box-sizing: border-box;
+                                line-height: 30px;
+                            }
+
+                            .listOfReservations td a:hover {
+                                color: rgba(14, 14, 14, 0.91);
+                                background-color: white;
+                            }
+
+    .userSecondBar{
+        margin-top: 0;
+        width: 50%;
+        height: 100%;
+        float: right;
+        box-sizing: border-box;
+        padding: 5% 5% 5% 2.5%;
+    }
+
+        .userSecondBar h2 {
+            margin-bottom: 10px;
+        }
+
+        .userSecondBar h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .userSecondBar p {
+            text-align: justify;
+        }
+
+        .upperSettings{
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+            .upperSettings label,
+            .labelSettings{
+                width: 80%;
+                margin: 0 10%;
+                box-sizing: border-box;
+            }
+
+            .personalInformation{
+                width: 50%;
+                height: 100%;
+                float: left;
+            }
+
+            .passwordSettings{
+                width: 50%;
+                height: 100%;
+                float: right;
+            }
+
+        .confirmChanges{
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+        }
+
+            .confirmChanges .loginInput{
+                margin: 0 5% 0 5%;
+                width: 55%;
+            }
+
+            .confirmChanges .loginButton{
+                border-color: rgba(14, 14, 14, 0.91);;
+                margin: 0;
+            }
+
+            .cancelButton{
+                width: 100%;
+                height: 100%;
+                color: white;
+                background-color: rgba(14, 14, 14, 0.91);
+                border-radius: 5px;
+                border: 2px solid rgba(14, 14, 14, 0.91);
+                cursor: pointer;
+                transition-property: background-color, color;
+                transition-duration: 0.5s;
+            }
+
+            .cancelButton:hover{
+                color: rgba(14, 14, 14, 0.91);
+                background-color: white;
+            }
+
+/*restaurace board*/
+
+.restaurantBoard{
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+    .restaurantBoard .userFirstBar{
+        width: 65%;
+        margin-top: 0;
+    }
+
+        .restaurantBoardTile{
+            width: 100%;
+            height: auto;
+            border: 2px dashed rgba(14, 14, 14, 0.91);
+            border-radius: 10px;
+        }
+
+            .restaurantBoard .userFirstBar .themePicture{
+                width: 100%;
+                height: 200px;
+                background-color: gray;
+                background-image: url("../graphics/notfound.jpg");
+                background-position: center;
+                background-size: cover;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+
+            .restaurantBoard .userBoardReservation{
+                margin-top: 30px;
+            }
+
+            .restaurantBoardTile h2{
+                text-align: center;
+                font-size: 40px;
+                margin-top: 40px;
+                margin-bottom: 0;
+            }
+
+            .restaurantBoardTile p{
+                margin-left: 30px;
+            }
+
+            .restaurantBoardTile .listOfReservations{
+                background-color: white;
+            }
+
+            .restaurantBoardTile table{
+                margin: 0 3% 7% 3%;
+                box-sizing: border-box;
+                width: 94%;
+            }
+
+                .emptyTd{
+                    text-align: center;
+                }
+
+
+    .restaurantBoard .userSecondBar{
+        width: 35%;
+        margin-top: 0;
+        padding-top: 13vh;
+        padding-bottom: 0;
+    }
+
+        .restaurantBoard .userSecondBar p{
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .restaurantBoard .userSecondBar h3{
+            margin-bottom: 30px;
+        }
+
+        .restaurantBoard .userSecondBar .loginInput{
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            box-sizing: border-box;
+        }
+
+        .descriptionInput{
+            height: 130px !important;
+        }
+
+        .restaurantBoard .userSecondBar label{
+            margin-left: 5%;
+        }
+
+        .restaurantBoard .userSecondBar textarea{
+            height: auto;
+        }
+
+        .restaurantBoard .inputConfirmSettings{
+                margin: 0 5% 0 10%;
+                width: 55% !important;
+                box-sizing: border-box;
+        }
+
+        .userPersonalTables{
+            padding-top: 40px;
+        }
+
+        .tablesTable{
+            width: 100%;
+            height: auto;
+        }
+
+            .tablesTable tr{
+                width: 100%;
+                min-height: 40px;
+                max-height: 60px;
+                height: auto;
+            }
+
+                .tablesTable th{
+                    width: auto;
+                    min-height: 40px;
+                    max-height: 60px;
+                    height: auto;
+                    text-align: left;
+                }
+
+                .tablesTable td{
+                    width: auto;
+                    min-height: 40px;
+                    max-height: 60px;
+                    height: auto;
+                    text-align: center;
+                }
+
+                    .tablesTable td .cancelButton{
+                        padding-top: 6px;
+                        padding-bottom: 6px;
+                    }
+
+        .addTableForm{
+            padding-top: 30px;
+            width: 100%;
+            height: auto;
+        }
+
+            .addTableInput{
+                width: 22%;
+                height: 50px;
+                margin: 0 2% 0 0;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                border: 2px solid rgba(14, 14, 14, 0.91);
+                color: rgba(14, 14, 14, 0.91);
+                border-radius: 10px;
+                transition-property: box;
+                transition-duration: 0.5s;
+            }
+
+            .addTableInput:hover{
+                box-shadow: 0.5px 0.5px rgba(14, 14, 14, 0.6);
+            }
+
+            .addTableButton{
+                width: 25%;
+                height: 50px;
+                box-sizing: border-box;
+                margin: 0 0 0 0;
+                border: 2px solid rgba(14, 14, 14, 0.91);
+                border-radius: 10px;
+                background-color: rgba(14, 14, 14, 0.91);
+                color: white;
+                cursor: pointer;
+                transition-property: color, background-color;
+                transition-duration: 1s;
+            }
+
+            .addTableButton:hover{
+                background-color: white;
+                color: rgba(14, 14, 14, 0.91);
+            }
+
+            .restSetting{
+                margin-left: 5%;
+                margin-top: 0;
+            }
+
+/*Admin*/
+
+.adminContainer{
+    width: 100%;
+    height: auto;
+}
+
+    .addRestaurantContainer{
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 8% 5% 5% 5%;
+    }
+
+        .restaurantInputForm{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+            .restaurantInput{
+                width: 20%;
+                height: 50px;
+                margin: 0 2% 0 0;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                border: 2px solid rgba(14, 14, 14, 0.91);
+                color: rgba(14, 14, 14, 0.91);
+                border-radius: 10px;
+                transition-property: box;
+                transition-duration: 0.5s;
+            }
+
+            .restaurantInputShort{
+                width: 10%;
+                height: 50px;
+                margin: 0 2% 0 0;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                border: 2px solid rgba(14, 14, 14, 0.91);
+                color: rgba(14, 14, 14, 0.91);
+                border-radius: 10px;
+                transition-property: box;
+                transition-duration: 0.5s;
+            }
+
+            .restaurantInput:hover,
+            .restaurantInputShort:hover{
+                box-shadow: 0.5px 0.5px rgba(14, 14, 14, 0.6);
+            }
+
+            .restaurantInputButton{
+                width: 10%;
+                height: 50px;
+                box-sizing: border-box;
+                margin: 0 0 0 0;
+                border: 2px solid rgba(14, 14, 14, 0.91);
+                border-radius: 10px;
+                background-color: rgba(14, 14, 14, 0.91);
+                color: white;
+                cursor: pointer;
+                transition-property: color, background-color;
+                transition-duration: 1s;
+            }
+
+            .restaurantInputButton:hover{
+                background-color: white;
+                color: rgba(14, 14, 14, 0.91);
+            }
+
+    .restaurantTableContainer{
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 3% 5% 5% 5%;
+    }
+
+        .restaurantTableContainer table{
+            width: 100%;
+            height: auto;
+            margin-top: 40px;
+            background-color: #fbfbfb;
+            border-spacing: 0;
+            text-align: left;
+        }
+
+            .restaurantTableContainer table tr{
+                height: 50px;
+                min-height: 50px;
+                max-height: 100px;
+            }
+
+            .restaurantTableContainer table tr:hover td{
+                background-color: #f5f5f5;
+            }
+
+                .restaurantTableContainer table th{
+                    padding: 0 1%;
+                }
+
+                .restaurantTableContainer table td{
+                    padding: 0 1%;
+                }
+
+                    .restaurantTableContainer table td .cancelButton{
+                        width: 100%;
+                        padding: 0 15px;
+                        height: 40px;
+                    }
+
+                    .restaurantTableContainer table td .cancelButtonLighter{
+                        width: 100%;
+                        padding: 0 15px;
+                        height: 40px;
+                        background-color: rgba(108, 108, 108, 0.91);
+                        color: white;
+                        border-radius: 5px;
+                        border: 2px solid rgba(99, 99, 99, 0.91);
+                        cursor: pointer;
+                        transition-property: background-color, color;
+                        transition-duration: 0.5s;
+                    }
+
+                    .restaurantTableContainer table td .cancelButtonLighter:hover{
+                        color: rgba(14, 14, 14, 0.91);
+                        background-color: white;
+                    }
+
+    .emptySlot{
+        border: 2px dashed rgba(14, 14, 14, 0.91);
+        border-radius: 10px;
+        text-align: center;
+        height: 100px;
+        width: 100%;
+        line-height: 100px;
+        margin-top: 40px;
+    }
+
+    .restaurantInfo{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+        .longDiv{
+            width: 30%;
+        }
+
+        .shortDiv{
+            width: 10%;
+        }
+
+        .restaurantInfo input{
+            width: 95%;
+            height: 50px;
+            margin: 0 0 0 0;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            border: 2px solid rgba(14, 14, 14, 0.91);
+            color: rgba(14, 14, 14, 0.91);
+            border-radius: 10px;
+            transition-property: box;
+            transition-duration: 0.5s;
+        }
+
+    .restaurantUsers{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+        .restaurantUsers .longDiv{
+            width: 30%;
+        }
+
+        .restaurantUsers .longDiv select{
+            width: 95%;
+        }
+
+        .restaurantChangeButton{
+            margin-top: 40px;
+            width: 100px;
+            height: 50px;
+        }
+
+/*user manager*/
+
+.manageUsersContainer{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 8%;
+    box-sizing: border-box;
+}
+
+    .manageUsersContainer h2{
+        margin-bottom: 40px;
+    }
+
+    .manageUsersContainer p{
+        margin-bottom: 40px;
+    }
+
+    .manageUsersContainer table{
+        border-spacing: 0;
+    }
+
+            .manageUsersContainer th{
+                text-align: left;
+            }
+
+            .manageUsersContainer td{
+                text-align: left;
+            }
+
+        .manageUsersContainer tr:hover td{
+            text-align: left;
+            background-color: #f5f5f5;
+        }
+
+/*reservace*/
+
+.reservationContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+    .choose-restaurant-description{
+        width: 20%;
+        margin: 2% 3%;
+        padding: 2%;
+        box-sizing: border-box;
+    }
+
+    .restaurantReservation{
+        width: 52%;
+        margin: 2% 0;
+        padding: 2%;
+        box-sizing: border-box;
+    }
+
+        .choose-restaurant-option{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-items: left;
+        }
+
+        .choose-input{
+            height: 50px;
+            width: auto;
+            box-sizing: border-box;
+            padding: 5px;
+            margin: 0 5px 0 5px;
+            background-color: white;
+            border: 2px solid rgba(14, 14, 14, 0.91);
+            border-radius: 10px;
+            cursor: text;
+        }
+
+        .reservation-submit{
+            width: auto;
+            height: 50px;
+            box-sizing: border-box;
+            margin: 0 0 0 5px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border: 2px solid rgba(14, 14, 14, 0.91);
+            border-radius: 10px;
+            background-color: rgba(14, 14, 14, 0.91);
+            color: white;
+            cursor: pointer;
+            transition-property: color, background-color;
+            transition-duration: 1s;
+        }
+
+        .reservation-submit:hover{
+            background-color: white;
+            color: rgba(14, 14, 14, 0.91);
+        }
+
+        .chosen-table{
+            width: 100%;
+            height: auto;
+        }
+
+            .chosen-table table{
+                width: 100%;
+                height: auto;
+                border-spacing: 0;
+            }
+
+                .chosen-table tr{
+                    height: 50px;
+                }
+
+                    .chosen-table th{
+                        width: auto;
+                        text-align: left;
+                        padding: 5px;
+                        box-sizing: border-box;
+                    }
+
+                    .chosen-table td{
+                        width: auto;
+                        text-align: left;
+                        padding: 5px;
+                        box-sizing: border-box;
+                    }
+
+                    .narrow{
+                        width: 5% !important;
+                        text-align: center;
+                        align-items: center;
+                        justify-items: center;
+                    }
+
+                .chosen-table tr:hover td{
+                    text-align: left;
+                    background-color: #f5f5f5;
+                }
+
+                    .buttonDoReservation{
+                        width: auto;
+                        height: 50px;
+                        margin: 0px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+
+    .choose-reservation-form{
+        height: 85vh;
+        width: 20%;
+        margin: 2% 3%;
+        padding: 2%;
+        box-sizing: border-box;
+        background-color: white;
+        border: 2px dashed rgba(14, 14, 14, 0.91);
+        border-radius: 10px;
+    }
+
+        .choose-reservation-form h2{
+            text-align: center;
+            margin: 20px 0px 30px 0px;
+        }
+
+        .choose-reservation-form form{
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+
+            .choose-reservation-form fieldset{
+                border: none;
+                padding: 0px;
+                margin: 5px 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            .choose-reservation-form label{
+                min-width: 50%;
+                float: left;
+                line-height: 40px;
+            }
+
+            .reservation-input{
+                width: 50%;
+                height: 40px;
+                border: none;
+                border-radius: 2px;
+                text-align: center;
+                float: right;
+            }
+
+            .buttonAutoWidth{
+                width: 60%;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin: 4% 20% 5% 20%;
+                box-sizing: border-box;
+            }
+
+            .greenBackground{
+                background-color: rgb(110, 191, 88) !important;
+            }
+
+                .greenBackground input{
+                    background-color: rgb(110, 191, 88) !important;
+                }
+
+            .grayBackground{
+                background-color: #555555 !important;
+            }
+
+    .choose-restaurant-description h2{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .choose-restaurant-description h3{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .choose-restaurant-description .descriptionText{
+        text-align: justify;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .choose-restaurant-description .descriptionContact{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .choose-restaurant-description ul {
+        list-style-type: none;
+        text-align: left;
+        box-sizing: border-box;
+        padding-left: 15%;
+        margin-bottom: 10px;
+    }
+
+    #makeReservation{
+        margin-top: 40px;
+    }

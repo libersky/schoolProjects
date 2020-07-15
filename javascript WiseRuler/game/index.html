@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <title>WiseRuler</title>
+        <link href="https://fonts.googleapis.com/css?family=Fondamento&display=swap&subset=latin-ext" rel="stylesheet">
+        <link rel="icon" type="image/png" href="../graphic/icon.png">
+        <style>
+            
+            body{
+                width: 100%;
+                max-width: 1920px;
+                height: 100%;
+                max-height: 1080px;
+                padding: 0px;
+                margin: 0px;
+            }
+            .frame{
+                position: fixed;
+                width: 100%;
+                height: 100%;
+              /*  border: 1px solid pink;*/
+                font-family: 'Fondamento', cursive;
+              /*  background-color: royalblue;
+                background-image: url("../graphic/castle.png");
+                background-size: cover;
+                background-position: left;*/
+                background-image: url("../graphic/forestCastle.jpg");
+                background-position: top;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+                .topDiv{
+                    width: 100%;
+                    height: 150px;
+                    display: flex;
+                /*    border: 1px solid green;*/
+                    margin-top: 30px;
+                }
+                    .stats{
+                        width: 33%;
+                        height: 100%;
+                     /*   border: 1px solid yellow;*/
+                    }
+                        .statLine{
+                            width: 100%;
+                            height: 33%;
+                        /*    border: 1px solid blue;*/
+                            display: flex;
+                            text-align: left;
+                            font-size: 20px;
+                            line-height: 45px;
+                            background-image: url("../graphic/wood.png");
+                            background-position: center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                        }
+                            .textStat{
+                                margin-left: 35%;
+                                width: 22%;
+                                height: 100%;
+                                text-align: left;
+                                font-size: 20px;
+                            /*    border: 1px solid greenyellow;*/
+                            }
+                    .days{
+                        width: 33%;
+                        height: 100%;
+                       /* border: 1px solid yellow;*/
+                        background-image: url("../graphic/wood.png");
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                        #name{
+                            width: 100%;
+                            height: 50%;
+                        /*    border: 1px solid red;*/
+                            text-align: center;
+                            line-height: 90px;
+                            font-size: 35px;
+                        }
+                        #gameDays{
+                            width: 100%;
+                            height: 50%;
+                        /*    border: 1px solid red;*/
+                            text-align: center;
+                            line-height: 50px;
+                            font-size: 30px;
+                        }
+                    .settings{
+                        width: 33%;
+                        height: 100%;
+                      /*  border: 1px solid yellow;*/
+                    }
+                        .contentSettings{
+                            width: 90%;
+                            height: 100%;
+                        }
+                            .icons{
+                                width: 100%;
+                                height: 50%;
+                                display: flex;
+                                flex-direction: row-reverse;
+                                cursor: pointer;
+                            }
+                                .icon{
+                                    width: 25%;
+                                    height: 100%;
+                                }
+                            .informations{
+                                width: 100%;
+                                height: 50%;
+                            }
+                                #infoBox{
+                                    width: 60%;
+                                    height: auto;
+                                    background-color: #f5c842;
+                                    border: 1px solid #deb63e;
+                                    margin: auto;
+                                    display: none;
+                                    color: white;
+                                    font-size: 20px;
+                                    padding: 50px;
+                                }
+                                    .closeBox{
+                                        width: 100%;
+                                        text-align: right;
+                                    }
+                .centerDiv{
+                    width: 100%;
+                    height: 400px;
+                 /*   border: 1px solid green;*/
+                }
+                    .content{
+                        width: 60%;
+                        height: 93%;
+                    /*    border: 1px solid blue;*/
+                        margin: auto;
+                        margin-top: 60px;
+                        background-image: url("../graphic/texture.jpg");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border: 1px solid #47443b;
+                        box-shadow: 2px 2px #47443b;
+                        transition: 1s;
+                        display: flex;
+                        flex-direction: row;
+                    }
+                        .task{
+                            width: 50%;
+                            height: 100%;
+                         /*   border: 1px solid red;*/
+                        }
+                            .question{
+                                width: 100%;
+                                height: 40%;
+                              /*  border: 1px solid seagreen;*/
+                            }
+                                .textBlock{
+                                    width: 100%;
+                                    height: 60%;
+                               /*    border: 1px solid seagreen;*/
+                                    text-align: center;
+                                    font-size: 30px; 
+                                    margin-top: 20%;
+                                }
+                            .answears{
+                                width: 100%;
+                                height: 30%;
+                             /*   border: 1px solid slateblue;*/
+                                display: flex;
+                            }
+                                .answersBlocks{
+                                    width: 50%;
+                                    height: 40%;
+                                }
+                                    .answears a{
+                                        display: block;
+                                        width: 80%;
+                                        height: auto;
+                                        margin: auto;
+                                    }
+                                        #yes, #no{
+                                            width: 100%;
+                                            height: 100%;
+                                        /*    border: 1px solid yellow;*/
+                                            text-align: center;
+                                            font-size: 30px;
+                                            line-height: 80px;
+                                        }
+                        .image{
+                            width: 40%;
+                        /*    border: 1px solid black;*/
+                        }
+                            .imageBox{
+                                width: 80%;
+                                height: 80%;
+                                margin: auto;
+                                margin-top: 40px;
+                                text-align: center;
+                            }
+                .bottomDiv{
+                    width: 100%;
+                    height: 80px;
+                 /*   border: 1px solid green;*/
+                    background-image: url("../graphic/bottomB.png");
+                    background-position: top;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    text-align: center;
+                    line-height: 65px;
+                    font-size: 30px;
+                    margin-top: 20px;
+                }
+                #welcomeBackground{
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    top: 0%;
+                    left: 0%;
+                    right: 0%;
+                    bottom: 0%;
+                    background-color: goldenrod;
+                    background-image: url("../graphic/church.jpg");
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    z-index: 2;
+                 /*   border: 1px solid green; */
+                }
+                    #welcomeScreen{
+                        width: 60%;
+                        height: 60%;
+                        margin: 10% 20%;
+                        background-color: goldenrod;
+                        background-image: url("../graphic/texture.jpg");
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        border: 1px solid #47443b;
+                        box-shadow: 2px 2px #47443b;
+                        /*background-image: url("../graphic/textureT.png");
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;*/
+                    }
+                        .welcomeContent{
+                            width: 80%;
+                            height: 60%;
+                        /*    border: 1px solid pink;*/
+                            margin: auto;
+                            margin-top: 5%;
+                            font-family: 'Fondamento', cursive;
+                        }
+                            .welcomeText{
+                                width: 80%;
+                                height: auto;
+                                margin: auto;
+                                margin-top: 15%;
+                                text-align: center;
+                                font-size: 35px;
+                            }
+                            .welcomeUser{
+                                width: 30%;
+                                height: 10%;
+                                margin: auto;
+                                margin-top: 4%;
+                            }
+                                #nameOfKingdom{
+                                    width: 100%;
+                                    height: 80%;
+                                    margin: auto;
+                                    font-size: 20px;
+                                    background-color: #f5eddc;
+                                    font-family: 'Fondamento', cursive;
+                                }
+                            .welcomeConfirm{
+                                width: 80%;
+                                height: 10%;
+                                margin: auto;
+                                margin-top: 10%;
+                                margin-bottom: 10%;
+                                font-size: 30px;
+                                text-align: center;
+                            }
+                a{
+                    text-decoration: none;
+                    color: red;
+                }
+
+                #defeatBackground{
+                    display: none;
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    top: 0%;
+                    left: 0%;
+                    right: 0%;
+                    bottom: 0%;
+                    background-color: goldenrod;
+                    background-image: url("../graphic/fire.jpg");
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    z-index: 2;
+                /*    border: 1px solid green; */
+                }
+                    .defeatScreen{
+                        width: 60%;
+                        height: 60%;
+                        margin: 10% 20%;
+                        background-color: goldenrod;
+                        background-image: url("../graphic/texture.jpg");
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        border: 1px solid #47443b;
+                        box-shadow: 2px 2px #47443b;
+                        /*background-image: url("../graphic/textureT.png");
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;*/
+                    }
+                        .defeatContent{
+                            width: 80%;
+                            height: auto;
+                        /*    border: 1px solid pink;*/
+                            margin: auto;
+                            margin-top: 5%;
+                            font-family: 'Fondamento', cursive;
+                        }
+                            #defeatMessage{
+                                width: 80%;
+                                height: auto;
+                                margin: auto;
+                                margin-top: 15%;
+                                text-align: center;
+                                font-size: 35px;
+                            }
+                            .justConfirm{
+                                width: 80%;
+                                height: 10%;
+                                margin: auto;
+                                margin-top: 1%;
+                                margin-bottom: 10%;
+                                font-size: 30px;
+                                text-align: center;
+                            }
+                #winBackground{
+                    display: none;
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    top: 0%;
+                    left: 0%;
+                    right: 0%;
+                    bottom: 0%;
+                    background-color: goldenrod;
+                    background-image: url("../graphic/forestCastle.jpg");
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    z-index: 2;
+                /*    border: 1px solid green; */
+                }
+                    #winMessage{
+                        width: 80%;
+                        height: 17%;
+                        margin: auto;
+                        margin-top: 15%;
+                        text-align: center;
+                        font-size: 35px;
+                    }
+
+        </style>
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+
+            var army = 50;
+            var wealth = 50;
+            var happiness = 50;
+
+            var number = 1;
+
+            $(document).ready(function(){
+
+                var decision;
+                var usedNumbers = [];
+                var isGame = true;
+                var lenghtXML =0;
+
+                var kingdomName;
+                var person;
+                var question;
+                var yesWealth;
+                var yesArmy;
+                var yesHappiness;
+                var noWealth;
+                var noArmy;
+                var noHappiness;
+
+                if (typeof(Storage) !== "undefined") {
+                    //local je ok
+                    if(localStorage.game){
+                        load(localStorage.game);
+                        document.getElementById("welcomeBackground").style.display = "none";
+                    }
+                    else{
+                        $("#confirmBtn").click(function(){
+                            kingdomName = $("#nameOfKingdom").val();
+                            //alert(kingdomName);
+                           /* if(!RegExp("test1").test(kingdomName)){
+                                alert("Zakazane.");
+                            }*/
+                            
+                            if(kingdomName.length == 0){
+                                alert("Království nemůže zůstat, bez jména.");
+                            }
+                            else{
+                                document.getElementById("welcomeBackground").style.display = "none";
+                            }
+                           // $("#name").append($("#nameOfKingdom").val());
+                            $("#name").text(kingdomName);
+                        });
+                    }
+                } else {
+                    $("#confirmBtn").click(function(){
+                        document.getElementById("welcomeBackground").style.display = "none";
+                        kingdomName = $("#nameOfKingdom").val();//os
+                       // $("#name").append($("#nameOfKingdom").val());
+                        $("#name").text(kingdomName);
+                    });
+                }
+
+                getLenghtXML();
+                randomNumber();
+
+      /*          
+
+                $("#confirmBtn").click(function(){
+                    document.getElementById("welcomeBackground").style.display = "none";
+                    kingdomName = $("#nameOfKingdom").val();
+                    $("#name").append($("#nameOfKingdom").val());
+                });*/
+
+
+                $("#info").click(function(){
+                        document.getElementById("infoBox").style.display = "block";
+                        $("#textOfInfo").empty();
+                        $("#textOfInfo").append("Cílem hry je udržet se ve vládě království co nejdéle. Aktualně splněno " + usedNumbers.length + " úkolů z " + lenghtXML + ".");
+                });
+                $("#closeInfo").click(function(){
+                        document.getElementById("infoBox").style.display = "none";
+                });
+                $("#reload").click(function(){
+                        localStorage.clear()
+                });
+
+                $("#army").append(army);
+                $("#wealth").append(wealth);
+                $("#happiness").append(happiness);
+
+                //alert("Document is ready!");
+
+                readData();
+
+                //alert("Reader end!");
+
+                $("#yes").click(function(){
+                    decision = true;
+                    doReaction();
+                });
+
+                $("#no").click(function(){
+                    decision = false;
+                    doReaction();
+                });
+
+                function doReaction(){
+                    if(decision){
+                        //alert("Bylo zakliknuto ano");
+                        wealth = corectNumber(wealth + parseInt(yesWealth, 10));
+                        army = corectNumber(army + parseInt(yesArmy, 10));
+                        happiness = corectNumber(happiness + parseInt(yesHappiness, 10));
+                    }
+                    else{
+                        //alert("Bylo zakliknuto ne");
+                        wealth = wealth + parseInt(noWealth, 10);
+                        army = army + parseInt(noArmy, 10);
+                        happiness = happiness + parseInt(noHappiness, 10);
+                    }
+                    $("#army").empty();
+                    $("#wealth").empty();
+                    $("#happiness").empty();
+
+                    $("#army").append(army);
+                    $("#wealth").append(wealth);
+                    $("#happiness").append(happiness);
+
+                    control();  //prohodil jsem kvuli tomu, že nebral v potaz poslední otázku
+                    randomNumber();
+                    if(isGame){
+                        save();
+                    }
+                    else{
+                        isGame = true;
+                    }
+                    readData();
+                }
+
+                function load(receivedData){
+                    var arrayData = [];
+                    var temporary="";
+                    for(i=0; i < receivedData.length; i++){
+                        if(receivedData[i] == ":"){
+                            arrayData.push(temporary);
+                            temporary = "";
+                            continue;
+                        }
+                        temporary += receivedData[i];
+                    }
+                    kingdomName = arrayData[0];
+                    $("#name").text(arrayData[0]);
+                    army = parseInt(arrayData[1], 10);
+                    wealth = parseInt(arrayData[2], 10);
+                    happiness = parseInt(arrayData[3], 10);
+                    lenghtXML = parseInt(arrayData[4], 10);
+                    loadUsedNumber(arrayData[5]);
+                    //alert(arrayData);
+                }
+
+                function loadUsedNumber(recievedNumbers){
+                    var temporary = "";
+                    for(i = 0; i < recievedNumbers.length; i++){
+                        if(recievedNumbers[i]==","){
+                            usedNumbers.push(parseInt(temporary, 10));
+                            temporary = "";
+                            continue;
+                        }
+                        temporary += recievedNumbers[i];
+                    }
+                   // alert(recievedNumbers);
+                }
+
+                function save(){
+                    var saveString = kingdomName + ":" + army + ":" + wealth + ":" + happiness + ":" + lenghtXML + ":" + usedNumbers  + ":" ; 
+                   // alert(saveString);
+                    localStorage.game = saveString;
+                }
+
+                function control(){
+                    if(wealth<=0){
+                        //alert("Pokladnice je prázdná. Přivedl jsi své království do chudoby. Prohral jsi.")
+                        document.getElementById("defeatBackground").style.display = "block";
+                        $("#defeatMessage").append("Pokladnice je prázdná. Přivedl jsi své království do chudoby. Prohrál jsi.");
+                        localStorage.clear()
+                        isGame=false;
+                    }
+                    if(army<=0){
+                        //alert("Sousední království spozorovalo, že nemáš žádnou armádu a rozhodlo se obsadit tvou zem. Prohral jsi.")
+                        document.getElementById("defeatBackground").style.display = "block";
+                        $("#defeatMessage").append("Sousední království zpozorovalo, že nemáš žádnou armádu a rozhodlo se obsadit tvou zem. Prohrál jsi.");
+                        localStorage.clear()
+                        isGame=false;
+                    }
+                    if(happiness<=0){
+                        //alert("Lid je rozhořštěn, vtrhl do paláce a žádá tvou hlavu. Prohral jsi.")
+                        document.getElementById("defeatBackground").style.display = "block";
+                        $("#defeatMessage").append("Lid je rozhořčen, vtrhl do paláce a žádá tvou hlavu. Prohrál jsi.");
+                        localStorage.clear()
+                        isGame=false;
+                    }
+                }
+
+                function corectNumber(num){
+                    if(num>100){
+                        return 100;
+                    }
+                    if(num<0){
+                        return 0;
+                    }
+                    return num;
+                }
+
+                function randomNumber(){  
+ 
+                    while(true){
+                        var check = false;
+                        var random = Math.floor((Math.random() * lenghtXML) + 1);
+                        //alert("Delka = " + lenghtXML + ", random = " + random);
+                        var kontrola = "";
+                        for(i=0;i<usedNumbers.length;i++){
+                            if(usedNumbers[i]==random){
+                                check=true;
+                            }
+                            kontrola += " " + usedNumbers[i];
+                        }
+                        if(!check){
+                            usedNumbers.push(random);
+                            number = random;
+                            return random;
+                        }
+                        if(usedNumbers.length==lenghtXML){
+                            document.getElementById("winBackground").style.display = "block";
+                            $("#winMessage").append("Udržel jsi vládu po mnoho dní. Gratuluji jsi moudrý vládce.");
+                            localStorage.clear()
+                            isGame=false;
+                            return;
+                        }
+                        
+                        kontrola = "";
+                    }
+
+                }
+                
+                function readData(){
+
+                    $.get( "./gameTasks.xml", function( data ) {
+                        var $xml = $(data);
+                        $xml.find('task[number="' + number + '"]').each(function(){
+                            //alert($(this).text());
+                            person = $(this).find('person').text();
+                            question = $(this).find('question').text();
+                            $(this).find('reaction[answer="yes"]').each(function(){
+                                yesWealth = $(this).find('wealth').text();
+                                yesArmy = $(this).find('army').text();
+                                yesHappiness = $(this).find('happiness').text();
+                            //    
+                            ("in = " + yesArmy);
+                            });
+                            $(this).find('reaction[answer="no"]').each(function(){
+                                noWealth = $(this).find('wealth').text();
+                                noArmy = $(this).find('army').text();
+                                noHappiness = $(this).find('happiness').text();
+                            });
+                            //alert(yesArmy + " - " + noArmy);
+                        });
+                        $("#result").empty();
+                        $("#result").append(person + ": " + question);
+                        $("#gameDays").empty();
+                        $("#gameDays").append("Jsi u vlády " + usedNumbers.length + ". den.");
+
+                    });
+
+                }
+                function getLenghtXML(){
+
+                    $.get( "./gameTasks.xml", function( data ) {
+                        var $xml = $(data);
+                        //alert($xml.find('task').length);
+                        lenghtXML = parseInt(($xml.find('task').length), 10);
+                    });
+
+                }
+            });
+
+
+
+        </script>
+    </head>
+    <body>
+        <div class="frame">
+            <div class="topDiv" id="topDiv">
+                <div class="stats">
+                    <div class="statLine">
+                        <div class="textStat">Armáda: </div>
+                        <div id="army"></div>
+                    </div>
+                    <div class="statLine">
+                        <div class="textStat">Bohatství: </div>
+                        <div id="wealth"></div>
+                    </div>                   
+                    <div class="statLine">
+                        <div class="textStat">Spokojenost: </div>
+                        <div id="happiness"></div>
+                    </div>
+                </div>
+                <div class="days">
+                    <div id="name"></div>
+                    <div id="gameDays"></div>
+                </div>
+                <div class="settings">
+                    <div class="contentSettings">
+                        <div class="icons">
+                            <div class="icon" id="info">
+                                <img src="../graphic/infoY.png" alt="informační ikona" title="Restartovat hru" width="70" height="70"/>
+                            </div>
+                            <a href="./">
+                                <div class="icon" id="reload">
+                                    <img  src="../graphic/back.png" alt="informační ikona" title="Nápověda" width="70" height="70"/> 
+                                </div>
+                            </a> 
+                        </div>
+                        <div class="informations">
+                            <div id="infoBox">
+                                <div class="closeBox">
+                                    <a href="#" id="closeInfo">Zavřít</a>
+                                </div>
+                                <div id="textOfInfo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="centerDiv">
+                <div class="content" id="content">
+                    <div class="image">
+                        <div class="imageBox">
+                            <img src="../graphic/knighthelmet.png" alt="rytířská helma" width="250" height="300"/>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <div class="question">
+                            <div class="textBlock" id="result">
+                            </div>
+                        </div>
+                        <div class="answears">
+                            <div class="answersBlocks">
+                                <a href="#">
+                                    <div id="yes">
+                                        Přijmout
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="answersBlocks">
+                                <a href="#">
+                                    <div id="no">
+                                        Odmítnout
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomDiv">
+                2020 &copy; Aleš Liberký
+            </div>
+        </div>
+        <div id="welcomeBackground">
+            <div id="welcomeScreen">
+                <div class="welcomeContent">
+                    <div class="welcomeText">
+                        Pojmenuj své království...
+                    </div>
+                    <!--<form action="http://eso.vse.cz/~xvojs03/4iz268/10-vypis-formulare.php">-->
+                        <div class="welcomeUser">
+                            <input type="text" name="nameOfKingdom" id="nameOfKingdom" pattern="\w\w*">
+                        </div>
+                        <div class="welcomeConfirm">
+                            <a href="#" id="confirmBtn">&gt; Uložit &lt;</a>
+                        </div>
+                    <!--</form>-->
+                </div>
+            </div>
+        </div>
+        <div id="defeatBackground">
+            <div class="defeatScreen">
+                <div class="defeatContent">
+                    <div class="welcomeText">
+                        <div id="defeatMessage"></div>
+                    </div>
+                    <div class="justConfirm">
+                        <a href="./">&gt; Hrát znovu &lt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="winBackground">
+            <div class="defeatScreen">
+                <div class="defeatContent">
+                    <div class="welcomeText">
+                        <div id="winMessage"></div>
+                    </div>
+                    <div class="justConfirm">
+                        <a href="./">&gt; Hrát znovu &lt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

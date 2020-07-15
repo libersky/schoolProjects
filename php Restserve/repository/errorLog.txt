@@ -1,0 +1,8 @@
+26-05-2020 10:44:16 Uživatel zadal do vyhledávače: pivo<;0 <oklo>
+26-05-2020 10:44:28 Uživatel zadal do vyhledávače: pi;ca
+26-05-2020 10:48:08 Uživatel zadal do vyhledávače: ká;va
+26-05-2020 10:48:12 Uživatel zadal do vyhledávače: ká<>va
+26-05-2020 10:48:22 Uživatel zadal do vyhledávače: oko>
+26-05-2020 10:48:28 Uživatel zadal do vyhledávače: pivo>
+26-05-2020 10:48:33 Uživatel zadal do vyhledávače: pivo >
+26-05-2020 11:50:57 Uživatel zadal do url adresi v loginu: <dv

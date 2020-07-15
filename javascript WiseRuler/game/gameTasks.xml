@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tasks>
+    <task number="1">
+        <reaction answer="yes">
+            <wealth>-20</wealth>
+            <army>20</army>
+            <happiness>-5</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>0</happiness>
+        </reaction>
+        <question>Máme posílit armádu?</question>
+        <person>Generál</person>
+    </task>
+    <task number="2">
+        <reaction answer="yes">
+            <wealth>10</wealth>
+            <army>-20</army>
+            <happiness>+5</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>-2</happiness>
+        </reaction>
+        <question>Máme rozpustit 20 vojenských jednotek?</question>
+        <person>Generál</person>
+    </task>
+    <task number="3">
+        <reaction answer="yes">
+            <wealth>-30</wealth>
+            <army>+20</army>
+            <happiness>5</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>-20</army>
+            <happiness>-5</happiness>
+        </reaction>
+        <question>Máme nakoupit nové zbraně pro armádu?</question>
+        <person>Generál</person>
+    </task>
+    <task number="4">
+        <reaction answer="yes">
+            <wealth>0</wealth>
+            <army>-10</army>
+            <happiness>15</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>-5</happiness>
+        </reaction>
+        <question>Máme do ulic postavit stráže pro větší bezpečí obyvatel?</question>
+        <person>Generál</person>
+    </task>
+    <task number="5">
+        <reaction answer="yes">
+            <wealth>-20</wealth>
+            <army>10</army>
+            <happiness>10</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>-5</army>
+            <happiness>-5</happiness>
+        </reaction>
+        <question>Máme vybudovat hradbu kolem města?</question>
+        <person>Generál</person>
+    </task>
+    <task number="6">
+        <reaction answer="yes">
+            <wealth>-5</wealth>
+            <army>-20</army>
+            <happiness>20</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>-10</happiness>
+        </reaction>
+        <question>Má armáda pomoci s odklízením následků po požárech?</question>
+        <person>Generál</person>
+    </task>
+    <task number="7">
+        <reaction answer="yes">
+            <wealth>-20</wealth>
+            <army>0</army>
+            <happiness>30</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>-20</happiness>
+        </reaction>
+        <question>Vaše město trpí nedostatkem základních surovin. Chcete je dokoupit?</question>
+        <person>Kupec</person>
+    </task>
+    <task number="8">
+        <reaction answer="yes">
+            <wealth>40</wealth>
+            <army>-20</army>
+            <happiness>10</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>5</happiness>
+        </reaction>
+        <question>Máme dobýt sousední území?</question>
+        <person>Generál</person>
+    </task>
+    <task number="9">
+        <reaction answer="yes">
+            <wealth>40</wealth>
+            <army>-10</army>
+            <happiness>10</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>-10</happiness>
+        </reaction>
+        <question>Máme uzavřít obchodní smlouvu s Orientem?</question>
+        <person>Kupec</person>
+    </task>
+    <task number="10">
+        <reaction answer="yes">
+            <wealth>20</wealth>
+            <army>0</army>
+            <happiness>-10</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>5</happiness>
+        </reaction>
+        <question>Přeje te si zvýšit daně?</question>
+        <person>Rádce</person>
+    </task>
+    <task number="11">
+        <reaction answer="yes">
+            <wealth>30</wealth>
+            <army>0</army>
+            <happiness>-30</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>0</happiness>
+        </reaction>
+        <question>Máme zavést robotu?</question>
+        <person>Rádce</person>
+    </task>
+    <task number="12">
+        <reaction answer="yes">
+            <wealth>-25</wealth>
+            <army>0</army>
+            <happiness>20</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>-15</happiness>
+        </reaction>
+        <question>Mohli bychom ve městě vybudovat novou kanalizaci?</question>
+        <person>Rádce</person>
+    </task>
+    <task number="13">
+        <reaction answer="yes">
+            <wealth>40</wealth>
+            <army>-10</army>
+            <happiness>-40</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>5</happiness>
+        </reaction>
+        <question>Přes naše území jede nestřežená karavana. Máme jí přepadnout? Nikdo se to nedozví.</question>
+        <person>Generál</person>
+    </task>
+    <task number="14">
+        <reaction answer="yes">
+            <wealth>-20</wealth>
+            <army>-20</army>
+            <happiness>30</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>0</wealth>
+            <army>0</army>
+            <happiness>-10</happiness>
+        </reaction>
+        <question>K příležitosti mých narozenin, by jsi mohl uspořádat vojenskou přehlídku.</question>
+        <person>Královna</person>
+    </task>
+    <task number="15">
+        <reaction answer="yes">
+            <wealth>-10</wealth>
+            <army>10</army>
+            <happiness>-5</happiness>
+        </reaction>
+        <reaction answer="no">
+            <wealth>-10</wealth>
+            <army>0</army>
+            <happiness>10</happiness>
+        </reaction>
+        <question>Opravdu chcete místo studny ve městě koupit nové děla pro armádu?</question>
+        <person>Rádce</person>
+    </task>
+</tasks>

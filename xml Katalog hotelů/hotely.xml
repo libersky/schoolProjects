@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="hotelySchematron.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/css" href="hotelyCSS.css"?>
+<hotely xmlns="urn:vse.cz:hotely"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:vse.cz:hotely hotelySchema.xsd">
+    <budova>
+        <nazev>Jezerka</nazev>
+        <hvezdy>3</hvezdy>
+        <kontakt vlastnik="Šumava">
+            <telefon>+420741258639</telefon>
+            <email>jezerka@hotely.cz</email>
+            <adresa>
+                <ulice>Pod Skalkou</ulice>
+                <cp>22</cp>
+                <mesto>Albrechtice v Jizerských horách</mesto>
+                <psc>468 43</psc>
+            </adresa>
+        </kontakt>
+        <predstavenstvo>
+            <osoba pozice="Majitel">
+                <jmeno>Franta Omáčka</jmeno>
+                <kontakt>
+                    <telefon>+420896754321</telefon>
+                    <email>franta.omacka@hotely.cz</email>
+                </kontakt>
+            </osoba>
+            <osoba pozice="Vedoucí">
+                <jmeno>Josef Novák</jmeno>
+                <kontakt>
+                    <telefon>+420326951874</telefon>
+                    <email>josef.novak@hotely.cz</email>
+                </kontakt>
+            </osoba>
+            <osoba pozice="Zástupce">
+                <jmeno>Marie Hajzerová</jmeno>
+                <kontakt>
+                    <telefon>+420456823971</telefon>
+                    <email>marie.hajzerova@hotely.cz</email>
+                </kontakt>
+            </osoba>
+        </predstavenstvo>
+        <pocetDostupnychPokoju>1</pocetDostupnychPokoju>
+        <pokoje>
+            <pokoj provoz="Ne">
+                <pocetLuzek>4</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednička, televize, kuchyňka</vybaveniPokoje>
+                <cenaZaNoc>2000</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ne">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2kk</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednička, televize</vybaveniPokoje>
+                <cenaZaNoc>1200</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ano">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednicka, televize, kuchyňka, vinotéka</vybaveniPokoje>
+                <cenaZaNoc>1500</cenaZaNoc>
+            </pokoj>
+        </pokoje>
+        <vybaveniHotelu>jídelna, klubovna, bar</vybaveniHotelu>
+    </budova>
+    
+    <budova>
+        <nazev>Šumava</nazev>
+        <hvezdy>4</hvezdy>
+        <kontakt vlastnik="Šumava">
+            <telefon>+420741258879</telefon>
+            <email>sumava@hotely.cz</email>
+            <adresa>
+                <ulice>Svatoplukova</ulice>
+                <cp>71</cp>
+                <mesto>Žleby</mesto>
+                <psc>789 43</psc>
+            </adresa>
+        </kontakt>
+        <predstavenstvo>
+            <osoba pozice="Majitel">
+                <jmeno>Filip Tříska</jmeno>
+                <kontakt>
+                    <telefon>+420526754321</telefon>
+                    <email>filip.triska@hotely.cz</email>
+                </kontakt>
+            </osoba>
+            <osoba pozice="Vedoucí">
+                <jmeno>Petr Truhlar</jmeno>
+                <kontakt>
+                    <telefon>+420326888874</telefon>
+                    <email>filip.truhlar@hotely.cz</email>
+                </kontakt>
+            </osoba>
+            <osoba pozice="Zástupce">
+                <jmeno>Marian Hajzer</jmeno>
+                <kontakt>
+                    <telefon>+420486823971</telefon>
+                    <email>marian.hajzer@hotely.cz</email>
+                </kontakt>
+            </osoba>
+        </predstavenstvo>
+        <pocetDostupnychPokoju>3</pocetDostupnychPokoju>
+        <pokoje>
+            <pokoj provoz="Ano">
+                <pocetLuzek>5</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednička, televize, kuchyňka</vybaveniPokoje>
+                <cenaZaNoc>5000</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ano">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2kk</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednička, televize, fen</vybaveniPokoje>
+                <cenaZaNoc>1600</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ne">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ne</socialniZarizeni>
+                <vybaveniPokoje>lednicka, televize</vybaveniPokoje>
+                <cenaZaNoc>800</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ano">
+                <pocetLuzek>3</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednicka, televize, kuchyňka</vybaveniPokoje>
+                <cenaZaNoc>1700</cenaZaNoc>
+            </pokoj>
+        </pokoje>
+        <vybaveniHotelu>jídelna, klubovna, bar, atrium</vybaveniHotelu>
+    </budova>
+    
+    <budova>
+        <nazev>Leonora</nazev>
+        <hvezdy>2</hvezdy>
+        <kontakt vlastnik="Leonora">
+            <telefon>+420 777 258 649</telefon>
+            <email>leonora@hotely.cz</email>
+            <adresa>
+                <ulice>Na Příkopech</ulice>
+                <cp>5</cp>
+                <mesto>Veveřice</mesto>
+                <psc>468 88</psc>
+            </adresa>
+        </kontakt>
+        <predstavenstvo>
+            <osoba pozice="Majitel">
+                <jmeno>Josef Kratochvíl</jmeno>
+                <kontakt>
+                    <telefon>+420892344328</telefon>
+                    <email>josef.kratochvil@hotely.cz</email>
+                </kontakt>
+            </osoba>
+            <osoba pozice="Vedoucí">
+                <jmeno>Milan Rubes</jmeno>
+                <kontakt>
+                    <telefon>+420876951874</telefon>
+                    <email>milan.rubes@hotely.cz</email>
+                </kontakt>
+            </osoba>
+            <osoba pozice="Zástupce">
+                <jmeno>Monika Nekonecna</jmeno>
+                <kontakt>
+                    <telefon>+420456553971</telefon>
+                    <email>monika.nekonecna@hotely.cz</email>
+                </kontakt>
+            </osoba>
+        </predstavenstvo>
+        <pocetDostupnychPokoju>5</pocetDostupnychPokoju>
+        <pokoje>
+            <pokoj provoz="Ano">
+                <pocetLuzek>4</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednička, televize, kuchyňka</vybaveniPokoje>
+                <cenaZaNoc>2000</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ano">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2kk</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednička, televize</vybaveniPokoje>
+                <cenaZaNoc>1200</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ano">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednicka, televize, kuchyňka, vinotéka</vybaveniPokoje>
+                <cenaZaNoc>1500</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ano">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednicka, televize, kuchyňka, vinotéka</vybaveniPokoje>
+                <cenaZaNoc>1500</cenaZaNoc>
+            </pokoj>
+            <pokoj provoz="Ano">
+                <pocetLuzek>2</pocetLuzek>
+                <typ>2+1</typ>
+                <socialniZarizeni>Ano</socialniZarizeni>
+                <vybaveniPokoje>lednicka, televize, kuchyňka, vinotéka</vybaveniPokoje>
+                <cenaZaNoc>1500</cenaZaNoc>
+            </pokoj>
+        </pokoje>
+        <vybaveniHotelu>jídelna, klubovna, bar</vybaveniHotelu>
+    </budova>
+    
+</hotely>

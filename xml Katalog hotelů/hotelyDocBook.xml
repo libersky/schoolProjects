@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="cs">
+    <info>
+        <title>Semestrální práce "Katalog hotelů"</title>
+        <subtitle>Dokumentace</subtitle>
+        <authorgroup>
+            <author>
+                <personname><firstname>Aleš</firstname><surname>Liberský</surname></personname>
+            </author>
+        </authorgroup>
+        <copyright>
+            <year>2020</year>
+            <holder>Aleš Liberský</holder>
+        </copyright>
+    </info>
+    <preface>
+        <title>Úvod</title>
+        <para><indexterm><primary>Semestrální práce</primary></indexterm>Semestrální práce "Katalog hotelů" je nástroj vhodný pro cestovní kanceláře, nebo majitele řetězce hotelů. Umožňuje uchovávat struktorované informace o jednotlivých hotelech. Lze jí aplikovat na neomezené množství hotelů.</para>
+        <para>Šablona zároveň kontroluje vstupní data, zda uživatel zadává opravdu informace, které jsou požadovány.</para>
+    </preface>
+    <chapter>
+        <title>Ukázkový dokument</title>
+        <para>Jednoduchý dokument ve formátu xml. Obsahuje náhodná data pro demonstraci funkcí nástroje.</para>
+        <para>Obsahuje elementy: hotely, budova, nazev, hvezdy, kontakt, telefon, email, adresa, ulice, cp, mesto, psc, predstavenstvo, osoba, jmeno, pocetVolnychPokoju, pokoje, pokoj, pocetLuzek, typ, socialniZarizeni, vybaveniPokoje, cenaZaNoc, vybaveniHotelu.</para>
+    </chapter>
+    <chapter>
+        <title>Schema</title>
+        <para>Většina hodnot formátu string je ošetřena regulárními výrazy.</para>
+        <example>
+            <title><indexterm><primary>Ošetření</primary></indexterm>Ošetření telofoního čísla</title>
+            <programlisting>
+<![CDATA[
+<xs:simpleType name="telefonType">
+    <xs:restriction base="xs:string">
+    <xs:pattern value="\+\d{3}\s?\d{3}\s?\d{3}\s?\d{3}"/>
+    </xs:restriction>
+</xs:simpleType>
+]]>
+            </programlisting>
+        </example>
+        <para>Naopak číselné hodnoty, jsou ve většině případů ošetřeny intervalem použitelných hodnot.</para>
+        <example>
+            <title>Ošetření počtu volných pokojů</title>
+            <programlisting>
+<![CDATA[
+<xs:simpleType name="pocetVolnychPokojuType">
+    <xs:restriction base="xs:int">
+        <xs:minInclusive value="0"/>
+    </xs:restriction>
+</xs:simpleType>
+]]>
+            </programlisting>
+        </example>
+    </chapter>
+    <chapter>
+        <title>Schematron</title>
+        <para><indexterm><primary>Schematron</primary></indexterm>Schematron ověřuje, že počet dostupných pokojů odpovídá skutečnému stavu uvedenému u jednotlivých pokojů.</para>
+        <example>
+            <title>Kontrola počtu dostupných pokojů</title>
+            <programlisting>
+<![CDATA[
+<sch:pattern>
+    <sch:title>Kontrola počtu dostupných pokojů</sch:title>
+    <sch:rule context="h:hotely/h:budova">
+        <sch:report test="count(h:pokoje/h:pokoj[contains(
+            @provoz,'Ano')])!=h:pocetDostupnychPokoju/text()">
+            Počet dostupných pokojů neodpovídá skutečnosti.
+        </sch:report>
+    </sch:rule>
+</sch:pattern>
+]]>
+            </programlisting>
+        </example>
+    </chapter>
+    <chapter>
+        <title><indexterm><primary>HTML transformace</primary></indexterm>Transformace HTML</title>
+        <para>Zajišťuje transformaci do několika HTML souborů. Soubory jsou navzájem provázány odkazy.</para>
+        <para>Následující úsek kódu zajištuje generování jednotlivých HTML souborů, obsahující grafický výpis jednotlivých hotelů. Unikátnost jednotlivých názvů je zajištěná funkcí generate-id(.).</para>
+        <example>
+            <title>Generování jednotlivých souborů</title>
+            <programlisting>
+<![CDATA[
+<xsl:result-document href="{generate-id(.)}.html" 
+    format="html">
+    
+    <xsl:text disable-output-escaping="yes">
+        &lt;!DOCTYPE html&gt;
+    </xsl:text>
+    <html>
+        <head>
+            <title>
+                <xsl:value-of select="h:nazev"/>
+            </title>
+            <style>
+                ...
+            </style>
+        </head>
+        <body>
+            <header>
+                <div class="header">
+                    <a href="hotelyHTML.html">
+                        Zpět na seznam hotelů.
+                    </a>
+                    <h1>
+                        <xsl:value-of select="h:nazev"/>
+                    </h1>
+                    <h2>
+                        <xsl:value-of select="h:hvezdy"/>
+                        <xsl:text> 
+                            hvězdičkové ubytování
+                        </xsl:text>
+                    </h2>
+                </div>
+            </header>
+            <main>
+                <div class="main">
+                    <div class="obrazek">
+                        <xsl:text disable-output-escaping="yes">
+                            &lt;img src="
+                        </xsl:text>
+                        <xsl:value-of select="h:nazev"/>
+                        <xsl:text disable-output-escaping="yes">
+                            .jpg" alt="Obrázek hotelu 
+                        </xsl:text>
+                        <xsl:value-of select="h:nazev"/>
+                        <xsl:text disable-output-escaping="yes">
+                            . (Pokud se obrázek nezobrazuje, 
+                            znamená to, že nebyl nahrán, 
+                            nebo nebyl uložen ve formátu 
+                            .jpg pod názvem 
+                        </xsl:text>
+                        <xsl:value-of select="h:nazev"/>
+                        <xsl:text disable-output-escaping="yes">
+                            .jpg)" width="500"&gt;
+                        </xsl:text>
+                    </div>
+                    <div class="pokoje">
+                        <h2>
+                            <xsl:text>
+                                Pokoje:
+                            </xsl:text>
+                        </h2>
+                        <xsl:apply-templates select="h:pokoje"/>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer">
+                    <div class="kontakt">
+                        <h2>
+                            <xsl:text>
+                                Kontakt:
+                            </xsl:text>
+                        </h2>
+                        <xsl:apply-templates select="h:kontakt"/>
+                    </div>
+                    <div class="predstavenstvo">
+                        <h2>
+                            <xsl:text>
+                                Představenstvo:
+                            </xsl:text>
+                        </h2>
+                        <xsl:apply-templates 
+                            select="h:predstavenstvo/h:osoba"/>
+                    </div>
+                </div>
+            </footer>
+        </body>
+    </html>
+</xsl:result-document> 
+]]>
+            </programlisting>
+        </example>
+        <para>Následující úsek kódu zajištuje generování obsahu, kliknutím na jednotlivé položky se uživatel přesune na stránku, která obsahuje výpisy jednotlivých hotelů. Stejně jako v předchozím případě, je i zde využita funkce generate-id(.) pro opětovné vygenerování názvu již uloženého souboru.</para>
+        <example>
+            <title><indexterm><primary>Generování obsahu</primary></indexterm>Generování obsahu</title>
+            <programlisting>
+<![CDATA[
+<li>
+    <a href="{generate-id(.)}.html">
+        <xsl:value-of select="h:nazev"/>
+        <xsl:text disable-output-escaping="yes"> - </xsl:text>
+        <xsl:value-of select="generate-id(.)"/>
+    </a>
+</li>
+]]>
+            </programlisting>
+        </example>
+        <para>Následující úsek kódu zajištuje textový výpis, který uživatele informuje o přitomnosti socialního zařízení v pokoji. Funkce je realizovaná pomocí funkcionality xsl:choose. V tagu xsl:when je uvedená <indexterm><primary>Podmínka</primary></indexterm>podmínka, následuje výpis, který se zobrazí v případě splnění podmínky. Naopak tag xsl:otherwise označuje výpis, který se zobrazí při nesplnění podmínky.</para>
+        <example>
+            <title>Podmínka pro výpis</title>
+            <programlisting>
+<![CDATA[
+<xsl:choose>
+    <xsl:when test="h:socialniZarizeni = 'Ano'">
+        <xsl:text>Pokoj má vlastní socialní zařízení.</xsl:text>
+        <br/>
+    </xsl:when>
+    <xsl:otherwise>
+        <xsl:text>Pokoj nemá vlastní socialní zařízení.</xsl:text>
+        <br/>
+    </xsl:otherwise>
+</xsl:choose>
+]]>
+            </programlisting>
+        </example>
+        <para>Následující ukázka zajišťuje vygenerování HTML kódu pro obrázek hotelu, do kódu bylo nutné vložit název konkrétního hotelu, aby se zobrazil odpovídající obrázek.</para>
+        <example>
+            <title>Podmínka pro výpis</title>
+            <programlisting>
+<![CDATA[
+<xsl:text disable-output-escaping="yes">
+    &lt;img src="
+</xsl:text>
+<xsl:value-of select="h:nazev"/>
+<xsl:text disable-output-escaping="yes">
+    .jpg" alt="Obrázek hotelu 
+</xsl:text>
+<xsl:value-of select="h:nazev"/>
+<xsl:text disable-output-escaping="yes">
+    . (Pokud se obrázek nezobrazuje, znamená to, 
+    že nebyl nahrán, nebo nebyl uložen ve formátu 
+    .jpg pod názvem 
+</xsl:text>
+<xsl:value-of select="h:nazev"/>
+<xsl:text disable-output-escaping="yes">
+    .jpg)" width="500"&gt;
+</xsl:text>
+]]>
+            </programlisting>
+        </example>
+    </chapter>
+    <chapter>
+        <title><indexterm><primary>FO transformace</primary></indexterm>FO transformace</title>
+        <para>Kód uvedený v následujícím výpisu, zprostředkovává výpis obrázku konkrétního hotelu. Většina kódu je vypsána rušně pomocí funkcionality xlt:text, konkrétní název a díky němu i správný obrázek je do kódu vložen pomoci funkce xsl:value-of.</para>
+        <example>
+            <title>Výpis obrázku pomocí FO transformace</title>
+            <programlisting>
+<![CDATA[
+<xsl:text disable-output-escaping="yes">
+    &lt;img src="
+</xsl:text>
+<xsl:value-of select="h:nazev"/>
+<xsl:text disable-output-escaping="yes">
+    .jpg" alt="Obrázek hotelu 
+</xsl:text>
+<xsl:value-of select="h:nazev"/>
+<xsl:text disable-output-escaping="yes">
+    . (Pokud se obrázek nezobrazuje, znamená to, 
+    že nebyl nahrán, nebo nebyl uložen ve formátu 
+    .jpg pod názvem 
+</xsl:text>
+<xsl:value-of select="h:nazev"/>
+<xsl:text disable-output-escaping="yes">
+    .jpg)" width="500"&gt;
+</xsl:text>
+]]>
+            </programlisting>
+        </example>
+    </chapter>
+    <chapter>
+        <title>Schematron</title>
+        <para><indexterm><primary>CSS</primary></indexterm>CSS styly upravují vzhled ukázkového XML dokumentu.</para>
+        <example>
+            <title>Ukázka CSS sytulů</title>
+            <programlisting>
+<![CDATA[
+osoba email:before{
+    display: inline;
+    font-weight:bold;
+    content: "Email: ";
+    margin-left: 20px;
+}
+
+osoba email{
+    display: block;
+    margin-left: 20px;
+}
+]]>
+            </programlisting>
+        </example>
+    </chapter>
+    
+    <index></index>
+    
+</book>

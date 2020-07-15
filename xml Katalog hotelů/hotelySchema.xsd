@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"  
+    targetNamespace="urn:vse.cz:hotely"
+    xmlns="urn:vse.cz:hotely"
+    xmlns:vysledky="urn:vse.cz:hotely" 
+    xmlns:h="urn:vse.cz:hotely"
+> 
+
+    <xs:element name="hotely" type="hotelType">
+        <xs:key name="keyNazev">
+            <xs:selector xpath="h:budova/h:nazev"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        <xs:keyref refer="keyNazev" name="keyRefEmail">
+            <xs:selector xpath="h:budova/h:kontakt"></xs:selector>
+            <xs:field xpath="@vlastnik"></xs:field>
+        </xs:keyref>
+    </xs:element>
+    
+    <xs:complexType name="hotelType">
+        <xs:sequence>
+            <xs:element name="budova" type="budovaType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="budovaType">
+        <xs:sequence>
+            <xs:element name="nazev" type="xs:string"/>
+            <xs:element name="hvezdy" type="hvezdyType"/>
+            <xs:element name="kontakt" type="kontaktType"/>
+            <xs:element name="predstavenstvo" type="predstavenstvoType"/>
+            <xs:element name="pocetDostupnychPokoju" type="pocetDostupnychPokojuType"/>
+            <xs:element name="pokoje" type="pokojeType"/>
+            <xs:element name="vybaveniHotelu" type="vybaveniType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="hvezdyType">
+        <xs:restriction base="xs:int">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="kontaktType">
+        <xs:sequence>
+            <xs:element name="telefon" type="telefonType"/>
+            <xs:element name="email" type="emailType"/>
+            <xs:element name="adresa" type="adresaType"/>
+        </xs:sequence>
+        <xs:attribute name="vlastnik" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="adresaType">
+        <xs:sequence>
+            <xs:element name="ulice" type="xs:string"/>
+            <xs:element name="cp" type="xs:int"/>
+            <xs:element name="mesto" type="xs:string"/>
+            <xs:element name="psc" type="pscType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="pscType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}\s?\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="predstavenstvoType">
+        <xs:sequence>
+            <xs:element name="osoba" type="osobaType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="osobaType">
+        <xs:sequence>
+            <xs:element name="jmeno" type="xs:string"/>
+            <xs:element name="kontakt" type="osobniKontaktType"/>
+        </xs:sequence>
+        <xs:attribute name="pozice" type="poziceType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="osobniKontaktType">
+        <xs:sequence>
+            <xs:element name="telefon" type="telefonType"/>
+            <xs:element name="email" type="emailType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="poziceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Majitel"/>
+            <xs:enumeration value="Vedoucí"/>
+            <xs:enumeration value="Zástupce"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="emailType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".*@.*\..*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="telefonType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\+\d{3}\s?\d{3}\s?\d{3}\s?\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="pocetDostupnychPokojuType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="pokojeType">
+        <xs:sequence>
+            <xs:element name="pokoj" type="pokojType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="pokojType">
+        <xs:sequence>
+            <xs:element name="pocetLuzek" type="xs:int"/>
+            <xs:element name="typ" type="xs:string"/>
+            <xs:element name="socialniZarizeni" type="socialniZarizeniType"/>
+            <xs:element name="vybaveniPokoje" type="vybaveniType"/>
+            <xs:element name="cenaZaNoc" type="cenaType"/>
+        </xs:sequence>
+        <xs:attribute name="provoz" type="provozType" use="required"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="socialniZarizeniType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ano"/>
+            <xs:enumeration value="Ne"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="vybaveniType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(.*,)*(.*)"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="cenaType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="provozType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ano"/>
+            <xs:enumeration value="Ne"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

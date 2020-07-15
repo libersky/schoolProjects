@@ -1,0 +1,199 @@
+<html xmlns:ng="http://docbook.org/docbook-ng"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Semestr&aacute;ln&iacute; pr&aacute;ce "Katalog hotel&#367;"</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="cs" class="book"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Semestr&aacute;ln&iacute; pr&aacute;ce "Katalog hotel&#367;"</h1></div><div><h2 class="subtitle">Dokumentace</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Ale&#353;</span> <span class="surname">Libersk&yacute;</span></h3></div></div></div><div><p class="copyright">Copyright &copy; 2020 Ale&#353; Libersk&yacute;</p></div></div><hr></div><div class="toc"><p><b>Obsah</b></p><dl class="toc"><dt><span class="preface"><a href="#d5e13">&Uacute;vod</a></span></dt><dt><span class="chapter"><a href="#d5e19">1. Uk&aacute;zkov&yacute; dokument</a></span></dt><dt><span class="chapter"><a href="#d5e23">2. Schema</a></span></dt><dt><span class="chapter"><a href="#d5e35">3. Schematron</a></span></dt><dt><span class="chapter"><a href="#d5e43">4. Transformace HTML</a></span></dt><dt><span class="chapter"><a href="#d5e68">5. FO transformace</a></span></dt><dt><span class="chapter"><a href="#d5e76">6. Schematron</a></span></dt><dt><span class="index"><a href="#d5e84">Rejst&#345;&iacute;k</a></span></dt></dl></div><div class="list-of-examples"><p><b>Seznam p&#345;&iacute;klad&#367;</b></p><dl><dt>2.1. <a href="#d5e26">O&#353;et&#345;en&iacute; telofon&iacute;ho &#269;&iacute;sla</a></dt><dt>2.2. <a href="#d5e32">O&#353;et&#345;en&iacute; po&#269;tu voln&yacute;ch pokoj&#367;</a></dt><dt>3.1. <a href="#d5e40">Kontrola po&#269;tu dostupn&yacute;ch pokoj&#367;</a></dt><dt>4.1. <a href="#d5e49">Generov&aacute;n&iacute; jednotliv&yacute;ch soubor&#367;</a></dt><dt>4.2. <a href="#d5e53">Generov&aacute;n&iacute; obsahu</a></dt><dt>4.3. <a href="#d5e61">Podm&iacute;nka pro v&yacute;pis</a></dt><dt>4.4. <a href="#d5e65">Podm&iacute;nka pro v&yacute;pis</a></dt><dt>5.1. <a href="#d5e73">V&yacute;pis obr&aacute;zku pomoc&iacute; FO transformace</a></dt><dt>6.1. <a href="#d5e81">Uk&aacute;zka CSS sytul&#367;</a></dt></dl></div><div class="preface"><div class="titlepage"><div><div><h1 class="title"><a name="d5e13"></a>&Uacute;vod</h1></div></div></div><p><a class="indexterm" name="d5e16"></a>Semestr&aacute;ln&iacute; pr&aacute;ce "Katalog hotel&#367;" je n&aacute;stroj vhodn&yacute; pro cestovn&iacute; kancel&aacute;&#345;e, nebo majitele &#345;et&#283;zce hotel&#367;. Umo&#382;&#328;uje uchov&aacute;vat struktorovan&eacute; informace o jednotliv&yacute;ch hotelech. Lze j&iacute; aplikovat na neomezen&eacute; mno&#382;stv&iacute; hotel&#367;.</p><p>&#352;ablona z&aacute;rove&#328; kontroluje vstupn&iacute; data, zda u&#382;ivatel zad&aacute;v&aacute; opravdu informace, kter&eacute; jsou po&#382;adov&aacute;ny.</p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e19"></a>Kapitola 1. Uk&aacute;zkov&yacute; dokument</h1></div></div></div><p>Jednoduch&yacute; dokument ve form&aacute;tu xml. Obsahuje n&aacute;hodn&aacute; data pro demonstraci funkc&iacute; n&aacute;stroje.</p><p>Obsahuje elementy: hotely, budova, nazev, hvezdy, kontakt, telefon, email, adresa, ulice, cp, mesto, psc, predstavenstvo, osoba, jmeno, pocetVolnychPokoju, pokoje, pokoj, pocetLuzek, typ, socialniZarizeni, vybaveniPokoje, cenaZaNoc, vybaveniHotelu.</p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e23"></a>Kapitola 2. Schema</h1></div></div></div><p>V&#283;t&#353;ina hodnot form&aacute;tu string je o&#353;et&#345;ena regul&aacute;rn&iacute;mi v&yacute;razy.</p><div class="example"><a name="d5e26"></a><p class="title"><b>P&#345;&iacute;klad 2.1. <a class="indexterm" name="d5e28"></a>O&#353;et&#345;en&iacute; telofon&iacute;ho &#269;&iacute;sla</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;xs:simpleType name="telefonType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:pattern value="\+\d{3}\s?\d{3}\s?\d{3}\s?\d{3}"/&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+
+            </pre></div></div><br class="example-break"><p>Naopak &#269;&iacute;seln&eacute; hodnoty, jsou ve v&#283;t&#353;in&#283; p&#345;&iacute;pad&#367; o&#353;et&#345;eny intervalem pou&#382;iteln&yacute;ch hodnot.</p><div class="example"><a name="d5e32"></a><p class="title"><b>P&#345;&iacute;klad 2.2. O&#353;et&#345;en&iacute; po&#269;tu voln&yacute;ch pokoj&#367;</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;xs:simpleType name="pocetVolnychPokojuType"&gt;
+    &lt;xs:restriction base="xs:int"&gt;
+        &lt;xs:minInclusive value="0"/&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+
+            </pre></div></div><br class="example-break"></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e35"></a>Kapitola 3. Schematron</h1></div></div></div><p><a class="indexterm" name="d5e38"></a>Schematron ov&#283;&#345;uje, &#382;e po&#269;et dostupn&yacute;ch pokoj&#367; odpov&iacute;d&aacute; skute&#269;n&eacute;mu stavu uveden&eacute;mu u jednotliv&yacute;ch pokoj&#367;.</p><div class="example"><a name="d5e40"></a><p class="title"><b>P&#345;&iacute;klad 3.1. Kontrola po&#269;tu dostupn&yacute;ch pokoj&#367;</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;sch:pattern&gt;
+    &lt;sch:title&gt;Kontrola po&#269;tu dostupn&yacute;ch pokoj&#367;&lt;/sch:title&gt;
+    &lt;sch:rule context="h:hotely/h:budova"&gt;
+        &lt;sch:report test="count(h:pokoje/h:pokoj[contains(
+            @provoz,'Ano')])!=h:pocetDostupnychPokoju/text()"&gt;
+            Po&#269;et dostupn&yacute;ch pokoj&#367; neodpov&iacute;d&aacute; skute&#269;nosti.
+        &lt;/sch:report&gt;
+    &lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;
+
+            </pre></div></div><br class="example-break"></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e43"></a>Kapitola 4. <a class="indexterm" name="d5e45"></a>Transformace HTML</h1></div></div></div><p>Zaji&#353;&#357;uje transformaci do n&#283;kolika HTML soubor&#367;. Soubory jsou navz&aacute;jem prov&aacute;z&aacute;ny odkazy.</p><p>N&aacute;sleduj&iacute;c&iacute; &uacute;sek k&oacute;du zaji&#353;tuje generov&aacute;n&iacute; jednotliv&yacute;ch HTML soubor&#367;, obsahuj&iacute;c&iacute; grafick&yacute; v&yacute;pis jednotliv&yacute;ch hotel&#367;. Unik&aacute;tnost jednotliv&yacute;ch n&aacute;zv&#367; je zaji&#353;t&#283;n&aacute; funkc&iacute; generate-id(.).</p><div class="example"><a name="d5e49"></a><p class="title"><b>P&#345;&iacute;klad 4.1. Generov&aacute;n&iacute; jednotliv&yacute;ch soubor&#367;</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;xsl:result-document href="{generate-id(.)}.html" 
+    format="html"&gt;
+    
+    &lt;xsl:text disable-output-escaping="yes"&gt;
+        &amp;lt;!DOCTYPE html&amp;gt;
+    &lt;/xsl:text&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;
+                &lt;xsl:value-of select="h:nazev"/&gt;
+            &lt;/title&gt;
+            &lt;style&gt;
+                ...
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;header&gt;
+                &lt;div class="header"&gt;
+                    &lt;a href="hotelyHTML.html"&gt;
+                        Zp&#283;t na seznam hotel&#367;.
+                    &lt;/a&gt;
+                    &lt;h1&gt;
+                        &lt;xsl:value-of select="h:nazev"/&gt;
+                    &lt;/h1&gt;
+                    &lt;h2&gt;
+                        &lt;xsl:value-of select="h:hvezdy"/&gt;
+                        &lt;xsl:text&gt; 
+                            hv&#283;zdi&#269;kov&eacute; ubytov&aacute;n&iacute;
+                        &lt;/xsl:text&gt;
+                    &lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/header&gt;
+            &lt;main&gt;
+                &lt;div class="main"&gt;
+                    &lt;div class="obrazek"&gt;
+                        &lt;xsl:text disable-output-escaping="yes"&gt;
+                            &amp;lt;img src="
+                        &lt;/xsl:text&gt;
+                        &lt;xsl:value-of select="h:nazev"/&gt;
+                        &lt;xsl:text disable-output-escaping="yes"&gt;
+                            .jpg" alt="Obr&aacute;zek hotelu 
+                        &lt;/xsl:text&gt;
+                        &lt;xsl:value-of select="h:nazev"/&gt;
+                        &lt;xsl:text disable-output-escaping="yes"&gt;
+                            . (Pokud se obr&aacute;zek nezobrazuje, 
+                            znamen&aacute; to, &#382;e nebyl nahr&aacute;n, 
+                            nebo nebyl ulo&#382;en ve form&aacute;tu 
+                            .jpg pod n&aacute;zvem 
+                        &lt;/xsl:text&gt;
+                        &lt;xsl:value-of select="h:nazev"/&gt;
+                        &lt;xsl:text disable-output-escaping="yes"&gt;
+                            .jpg)" width="500"&amp;gt;
+                        &lt;/xsl:text&gt;
+                    &lt;/div&gt;
+                    &lt;div class="pokoje"&gt;
+                        &lt;h2&gt;
+                            &lt;xsl:text&gt;
+                                Pokoje:
+                            &lt;/xsl:text&gt;
+                        &lt;/h2&gt;
+                        &lt;xsl:apply-templates select="h:pokoje"/&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/main&gt;
+            &lt;footer&gt;
+                &lt;div class="footer"&gt;
+                    &lt;div class="kontakt"&gt;
+                        &lt;h2&gt;
+                            &lt;xsl:text&gt;
+                                Kontakt:
+                            &lt;/xsl:text&gt;
+                        &lt;/h2&gt;
+                        &lt;xsl:apply-templates select="h:kontakt"/&gt;
+                    &lt;/div&gt;
+                    &lt;div class="predstavenstvo"&gt;
+                        &lt;h2&gt;
+                            &lt;xsl:text&gt;
+                                P&#345;edstavenstvo:
+                            &lt;/xsl:text&gt;
+                        &lt;/h2&gt;
+                        &lt;xsl:apply-templates 
+                            select="h:predstavenstvo/h:osoba"/&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/footer&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+&lt;/xsl:result-document&gt; 
+
+            </pre></div></div><br class="example-break"><p>N&aacute;sleduj&iacute;c&iacute; &uacute;sek k&oacute;du zaji&#353;tuje generov&aacute;n&iacute; obsahu, kliknut&iacute;m na jednotliv&eacute; polo&#382;ky se u&#382;ivatel p&#345;esune na str&aacute;nku, kter&aacute; obsahuje v&yacute;pisy jednotliv&yacute;ch hotel&#367;. Stejn&#283; jako v p&#345;edchoz&iacute;m p&#345;&iacute;pad&#283;, je i zde vyu&#382;ita funkce generate-id(.) pro op&#283;tovn&eacute; vygenerov&aacute;n&iacute; n&aacute;zvu ji&#382; ulo&#382;en&eacute;ho souboru.</p><div class="example"><a name="d5e53"></a><p class="title"><b>P&#345;&iacute;klad 4.2. <a class="indexterm" name="d5e55"></a>Generov&aacute;n&iacute; obsahu</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;li&gt;
+    &lt;a href="{generate-id(.)}.html"&gt;
+        &lt;xsl:value-of select="h:nazev"/&gt;
+        &lt;xsl:text disable-output-escaping="yes"&gt; - &lt;/xsl:text&gt;
+        &lt;xsl:value-of select="generate-id(.)"/&gt;
+    &lt;/a&gt;
+&lt;/li&gt;
+
+            </pre></div></div><br class="example-break"><p>N&aacute;sleduj&iacute;c&iacute; &uacute;sek k&oacute;du zaji&#353;tuje textov&yacute; v&yacute;pis, kter&yacute; u&#382;ivatele informuje o p&#345;itomnosti socialn&iacute;ho za&#345;&iacute;zen&iacute; v pokoji. Funkce je realizovan&aacute; pomoc&iacute; funkcionality xsl:choose. V tagu xsl:when je uveden&aacute; <a class="indexterm" name="d5e59"></a>podm&iacute;nka, n&aacute;sleduje v&yacute;pis, kter&yacute; se zobraz&iacute; v p&#345;&iacute;pad&#283; spln&#283;n&iacute; podm&iacute;nky. Naopak tag xsl:otherwise ozna&#269;uje v&yacute;pis, kter&yacute; se zobraz&iacute; p&#345;i nespln&#283;n&iacute; podm&iacute;nky.</p><div class="example"><a name="d5e61"></a><p class="title"><b>P&#345;&iacute;klad 4.3. Podm&iacute;nka pro v&yacute;pis</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;xsl:choose&gt;
+    &lt;xsl:when test="h:socialniZarizeni = 'Ano'"&gt;
+        &lt;xsl:text&gt;Pokoj m&aacute; vlastn&iacute; socialn&iacute; za&#345;&iacute;zen&iacute;.&lt;/xsl:text&gt;
+        &lt;br/&gt;
+    &lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;Pokoj nem&aacute; vlastn&iacute; socialn&iacute; za&#345;&iacute;zen&iacute;.&lt;/xsl:text&gt;
+        &lt;br/&gt;
+    &lt;/xsl:otherwise&gt;
+&lt;/xsl:choose&gt;
+
+            </pre></div></div><br class="example-break"><p>N&aacute;sleduj&iacute;c&iacute; uk&aacute;zka zaji&#353;&#357;uje vygenerov&aacute;n&iacute; HTML k&oacute;du pro obr&aacute;zek hotelu, do k&oacute;du bylo nutn&eacute; vlo&#382;it n&aacute;zev konkr&eacute;tn&iacute;ho hotelu, aby se zobrazil odpov&iacute;daj&iacute;c&iacute; obr&aacute;zek.</p><div class="example"><a name="d5e65"></a><p class="title"><b>P&#345;&iacute;klad 4.4. Podm&iacute;nka pro v&yacute;pis</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    &amp;lt;img src="
+&lt;/xsl:text&gt;
+&lt;xsl:value-of select="h:nazev"/&gt;
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    .jpg" alt="Obr&aacute;zek hotelu 
+&lt;/xsl:text&gt;
+&lt;xsl:value-of select="h:nazev"/&gt;
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    . (Pokud se obr&aacute;zek nezobrazuje, znamen&aacute; to, 
+    &#382;e nebyl nahr&aacute;n, nebo nebyl ulo&#382;en ve form&aacute;tu 
+    .jpg pod n&aacute;zvem 
+&lt;/xsl:text&gt;
+&lt;xsl:value-of select="h:nazev"/&gt;
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    .jpg)" width="500"&amp;gt;
+&lt;/xsl:text&gt;
+
+            </pre></div></div><br class="example-break"></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e68"></a>Kapitola 5. <a class="indexterm" name="d5e70"></a>FO transformace</h1></div></div></div><p>K&oacute;d uveden&yacute; v n&aacute;sleduj&iacute;c&iacute;m v&yacute;pisu, zprost&#345;edkov&aacute;v&aacute; v&yacute;pis obr&aacute;zku konkr&eacute;tn&iacute;ho hotelu. V&#283;t&#353;ina k&oacute;du je vyps&aacute;na ru&#353;n&#283; pomoc&iacute; funkcionality xlt:text, konkr&eacute;tn&iacute; n&aacute;zev a d&iacute;ky n&#283;mu i spr&aacute;vn&yacute; obr&aacute;zek je do k&oacute;du vlo&#382;en pomoci funkce xsl:value-of.</p><div class="example"><a name="d5e73"></a><p class="title"><b>P&#345;&iacute;klad 5.1. V&yacute;pis obr&aacute;zku pomoc&iacute; FO transformace</b></p><div class="example-contents"><pre class="programlisting">
+
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    &amp;lt;img src="
+&lt;/xsl:text&gt;
+&lt;xsl:value-of select="h:nazev"/&gt;
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    .jpg" alt="Obr&aacute;zek hotelu 
+&lt;/xsl:text&gt;
+&lt;xsl:value-of select="h:nazev"/&gt;
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    . (Pokud se obr&aacute;zek nezobrazuje, znamen&aacute; to, 
+    &#382;e nebyl nahr&aacute;n, nebo nebyl ulo&#382;en ve form&aacute;tu 
+    .jpg pod n&aacute;zvem 
+&lt;/xsl:text&gt;
+&lt;xsl:value-of select="h:nazev"/&gt;
+&lt;xsl:text disable-output-escaping="yes"&gt;
+    .jpg)" width="500"&amp;gt;
+&lt;/xsl:text&gt;
+
+            </pre></div></div><br class="example-break"></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e76"></a>Kapitola 6. Schematron</h1></div></div></div><p><a class="indexterm" name="d5e79"></a>CSS styly upravuj&iacute; vzhled uk&aacute;zkov&eacute;ho XML dokumentu.</p><div class="example"><a name="d5e81"></a><p class="title"><b>P&#345;&iacute;klad 6.1. Uk&aacute;zka CSS sytul&#367;</b></p><div class="example-contents"><pre class="programlisting">
+
+osoba email:before{
+    display: inline;
+    font-weight:bold;
+    content: "Email: ";
+    margin-left: 20px;
+}
+
+osoba email{
+    display: block;
+    margin-left: 20px;
+}
+
+            </pre></div></div><br class="example-break"></div><div class="index"><div class="titlepage"><div><div><h1 class="title"><a name="d5e84"></a>Rejst&#345;&iacute;k</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>C</h3><dl><dt id="ientry-d5e79">CSS, <a class="indexterm" href="#d5e76">Schematron</a></dt></dl></div><div class="indexdiv"><h3>F</h3><dl><dt id="ientry-d5e70">FO transformace, <a class="indexterm" href="#d5e68">FO transformace</a></dt></dl></div><div class="indexdiv"><h3>G</h3><dl><dt id="ientry-d5e55">Generov&aacute;n&iacute; obsahu, <a class="indexterm" href="#d5e43">Transformace HTML</a></dt></dl></div><div class="indexdiv"><h3>H</h3><dl><dt id="ientry-d5e45">HTML transformace, <a class="indexterm" href="#d5e43">Transformace HTML</a></dt></dl></div><div class="indexdiv"><h3>O</h3><dl><dt id="ientry-d5e28">O&#353;et&#345;en&iacute;, <a class="indexterm" href="#d5e23">Schema</a></dt></dl></div><div class="indexdiv"><h3>P</h3><dl><dt id="ientry-d5e59">Podm&iacute;nka, <a class="indexterm" href="#d5e43">Transformace HTML</a></dt></dl></div><div class="indexdiv"><h3>S</h3><dl><dt id="ientry-d5e38">Schematron, <a class="indexterm" href="#d5e35">Schematron</a></dt><dt id="ientry-d5e16">Semestr&aacute;ln&iacute; pr&aacute;ce, <a class="indexterm" href="#d5e13">&Uacute;vod</a></dt></dl></div></div></div></div></body></html>

@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+hotely{
+    padding: 10px 50px;
+}
+
+nazev{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 20px 0px;
+}
+
+hvezdy:before{
+    display: inline;
+    font-weight:bold;
+    content: "Počet hvězd: ";
+    margin-left: 10px;
+}
+
+hvezdy{
+    display: block;
+    margin: 5px 0px;
+}
+
+kontakt:before{
+    display: block;
+    font-weight:bold;
+    content: "Kontakt: \A Provozovatelem je hotel " attr(vlastnik);
+    white-space: pre-wrap;
+    margin-left: 10px;
+}
+
+kontakt{
+    display: block;
+    margin: 5px 0px;
+}
+
+    telefon:before{
+        display: inline;
+        font-weight:bold;
+        content: "Telefoní číslo: ";
+        margin-left: 10px;
+    }
+    
+    telefon{
+        display: block;
+        margin-left: 10px;
+    }
+    
+    email:before{
+        display: inline;
+        font-weight:bold;
+        content: "Email: ";
+        margin-left: 10px;
+    }
+    
+    email{
+        display: block;
+        margin-left: 10px;
+    }
+    
+    adresa:before{
+        display: block;
+        font-weight:bold;
+        content: "Adresa: ";
+        margin-left: 10px;
+    }
+    
+    adresa{
+        display: block;
+        margin-left: 10px;
+    }
+    
+        ulice{
+            display: inline;
+            margin-left: 20px;
+        }
+        
+        cp{
+            display: inline;
+        }
+        
+        mesto{
+            display: block;
+            margin-left: 20px;
+        }
+        
+        psc{
+            display: block;
+            margin-left: 20px;
+        }
+
+predstavenstvo:before{
+    display: block;
+    font-weight:bold;
+    content: "Představenstvo: ";
+    margin-left: 10px;
+}
+
+predstavenstvo{
+    display: block;
+    margin: 5px 0px;
+}
+
+    osoba:before{
+        display: block;
+        font-weight: bolder;
+        text-decoration: underline;
+        content: attr(pozice);
+        margin-left: 20px;
+    }
+    
+    osoba{
+        display: block;
+        margin: 5px 0px;
+    }
+    
+        jmeno:before{
+            display: inline;
+            font-weight:bold;
+            content: "Jméno: ";
+            margin-left: 10px;
+        }
+        
+        jmeno{
+            display: block;
+            margin-left: 10px;
+        }
+        
+        osoba kontakt:before{
+            display: block;
+            font-weight:bold;
+            content: "Kontakt: ";
+            margin-left: 20px;
+        }
+        
+        osoba kontakt{
+            display: block;
+            margin: 0px 0px;
+        }
+        
+            osoba telefon:before{
+                display: inline;
+                font-weight:bold;
+                content: "Telefoní číslo: ";
+                margin-left: 20px;
+            }
+            
+            osoba telefon{
+                display: block;
+                margin-left: 20px;
+            }
+            
+            osoba email:before{
+                display: inline;
+                font-weight:bold;
+                content: "Email: ";
+                margin-left: 20px;
+            }
+            
+            osoba email{
+                display: block;
+                margin-left: 20px;
+            }
+            
+pocetDostupnychPokoju:before{
+    display: inline;
+    font-weight:bold;
+    content: "Počet dostupných pokojů: ";
+    margin-left: 10px;
+}
+
+pocetDostupnychPokoju{
+    display: block;
+    margin: 5px 0px;
+}
+            
+pokoje:before{
+    display: block;
+    font-weight:bold;
+    content: "Pokoje: ";
+    margin-left: 0px;
+    margin-bottom: 5px;
+}
+
+pokoje{
+    display: table;
+    margin: 5px 10px;
+}    
+    pokoj{
+        display: table-row; 
+        border: 1px solid black;
+        margin: 10px 0px;
+    }
+    
+        pocetLuzek:before{
+            display: table-cell;
+            font-weight:bold;
+            content: "Počet lůžek: ";
+            margin-left: 10px;
+        }
+        
+        pocetLuzek{
+            display: table-cell;
+            border: 1px solid black;
+            margin-left: 10px;
+            padding: 5px;
+        }
+        
+        typ:before{
+            display: table-cell;
+            font-weight:bold;
+            content: "Typ: ";
+            margin-left: 10px;
+        }
+        
+        typ{
+            display: table-cell;
+            border: 1px solid black;
+            margin-left: 10px;
+            padding: 5px;
+        }
+        
+        socialniZarizeni:before{
+            display: table-cell;
+            font-weight:bold;
+            content: "Socialní zařízení: ";
+            margin-left: 10px;
+        }
+        
+        socialniZarizeni{
+            display: table-cell;
+            border: 1px solid black;
+            margin-left: 10px;
+            padding: 5px;
+        }
+        
+        vybaveniPokoje:before{
+            display: table-cell;
+            font-weight:bold;
+            content: "Vybavení pokoje: ";
+            margin-left: 10px;
+        }
+        
+        vybaveniPokoje{
+            display: table-cell;
+            border: 1px solid black;
+            margin-left: 10px;
+            padding: 5px;
+        }
+        
+        cenaZaNoc:before{
+            display: table-cell;
+            font-weight:bold;
+            content: "Cena za noc: ";
+            margin-left: 10px;
+        }
+        
+        cenaZaNoc{
+            display: table-cell;
+            border: 1px solid black;
+            margin-left: 10px;
+            padding: 5px;
+        }
+        
+        cenaZaNoc:after{
+            display: inline;
+            content: " Kč";
+        }
+        
+    pokoj:after{
+        display: table-cell;
+        content: "Dostupný: \A" attr(provoz);
+        font-weight: bold;
+        white-space: pre-wrap;
+        border: 1px solid black;
+        margin-left: 10px;
+        padding: 5px;
+    }
+
+vybaveniHotelu:before{
+    display: inline;
+    font-weight:bold;
+    content: "Vybavení hotelu: ";
+    margin-left: 10px;
+}
+
+vybaveniHotelu{
+    display: block;
+    margin: 5px 0px;
+}

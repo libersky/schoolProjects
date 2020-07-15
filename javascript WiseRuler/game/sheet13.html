@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="utf-8">
+        <title>Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <style>
+            table,td,th {
+                border: 1px solid black;
+            }
+
+            table {
+                margin: 10px;
+            }
+
+            td,th {
+                padding: 4px;
+            }
+
+            th {
+                font-weight: bold;
+            }
+            a {
+                display: block;
+                text-decoration: none;
+                color: black;
+                border: 1px solid black;
+                border-radius: 10px;
+                background-color: burlywood;
+                height: 30px;
+                width: 180px;
+                margin: 10px;
+                text-align: center;
+                line-height: 30px;
+            }
+            a:hover{
+                text-decoration: none;
+                background-color: white;
+            }
+			
+			a:hover sr{
+                color: red;
+				
+            }
+			
+			a:hover sr{
+                color: red;
+				
+            }
+			
+			
+        </style>
+	
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+			
+            $(document).ready(function(){
+
+                $('#nactiObsah').click(function(event){
+
+                    event.preventDefault();
+
+                    $.get( "gameTasks.xml", function( data ){
+
+                        $("#list").empty();
+                        
+                        var $xml = $(data);
+                        
+                      /*  $("#list").append('<tr><th>Obdarovávaný:</th><th>Dárek:</th></tr>'); 
+                        darek = $xml.find('darek').each(function(){
+                            $("#list").append('<tr><td>' + $(this).find('osoba').text() + '</td><td>' + $(this).find('predmet').text() + '</td></tr>');  
+                        }); */
+
+                        $("#list").append($xml.find('question').text()); 
+
+                    });
+
+                });
+
+                $('#skryjObsah').click(function(event){
+
+                    event.preventDefault();
+
+                    $("#list").empty();                    
+
+                });
+
+            });
+
+
+		</script>
+	</head>
+	<body>
+
+        <a href="" id="nactiObsah">Zobrazit seznam dárků</a>
+        
+        <div id="list"></div>
+
+        <a href="" id="skryjObsah">Skrýt seznam dárků<h1 id="sr">nnn</h1></a>
+		
+		<h1 id="sr">nnn</h1>
+        
+	</body>
+</html>
