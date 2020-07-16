@@ -1,0 +1,1717 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Roboto Condensed', sans-serif;
+	background-color: #191919;
+	max-width: 2560px;
+}
+
+/*-----------------------------------HEAD--------------------------------*/
+
+.headLine {
+	margin: 0px;
+	padding: 0px;
+	background-color: #262626;
+	color: white;
+	width: 100%;
+	height: 65px;
+	text-transform: uppercase;
+	position: fixed; 
+	top: 0; 
+	z-index: 1;
+}
+
+	.leftHeadLine {
+		margin: 0px;
+		padding: 0px;
+		float: left;
+		width: 30%;
+		height: 100%;
+	}
+	
+		.leftHeadLine a {
+			text-decoration: none;
+			color: white;
+		}
+	
+		.leftHeadLine h1 {
+			margin: 0px;
+			height: 20px;
+			padding: 22px 20px;
+			font-size: 20px;
+			text-align: center;
+			width: 190px;
+		}
+
+	
+	.rightHeadLine {
+		margin: 0px;
+		padding: 0px;
+		float: right;
+		width: 50%;
+		height: 100%;
+		font-size: 15px;
+	}
+	
+	#galery .rightHeadLine {
+		width: 30%;
+	}
+	
+		
+		
+		.navigation ul {
+			width: auto;
+			margin: 0px;
+			padding: 18px 20px; 
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-end;
+		}
+
+@media all and (max-width: 1030px) {
+	
+	#galery .rightHeadLine {
+		width: 30%;
+	}
+	
+	.leftHeadLine h1 {
+		width: 160px;
+	}
+		
+	.rightHeadLine {
+		width: 60%;
+	}
+}	
+
+		
+@media all and (max-width: 800px) {
+			
+	.headLine {
+		height: 200px;
+		width: 100%;
+		position: relative; 
+	}
+	
+		.leftHeadLine {
+			width: 50%;
+			margin: 0px;
+			height: 100%;
+		}
+		
+			.leftHeadLine h1 {
+				margin: auto;
+				text-align: center;
+				padding: 90px 0px;
+				font-size: 20px;
+			}
+		
+		.rightHeadLine {
+			width: 50%;
+			margin: 0px;
+		}
+		
+		#galery .rightHeadLine {
+			width: 40%;
+		}
+		
+			.navigation {
+				width: 100%;
+				margin: auto;
+				padding: 0px;
+				height: 100%;
+			}
+			
+				.menu {
+					width: 100%;
+					margin: 0px;
+					padding: 0px;
+					height: 100%;
+				}
+				
+					.menu ul {
+						width: 100%;
+						height: 180px;
+						margin: 0px;
+						padding: 0px;
+						flex-direction: column;
+						padding: 10px 0px;
+					}
+}
+
+		
+			.navigation li {
+				margin: auto;
+				max-width: 120px;
+				width: auto;
+				padding: 6px 10px;
+				display: inline-block;
+				list-style-type: none;
+			}
+			
+			#galery li {
+				max-width: 100%;
+			}
+			
+				.navigation a {
+					display: inline-block;
+					text-decoration: none;
+					color: #cecece;
+					letter-spacing: 5px;
+					transition: all 0.5s;
+				}
+				
+				#galery a {
+					width: auto;
+				}
+				
+				#active {
+					color: #ffffff;
+					font-weight: bold;
+				}
+				
+				.navigation a:hover{
+					color: #ffffff;
+					font-weight: bold;
+				}
+
+/*---------------------------------INDEX-----------------------------------*/
+			
+/*-------------------------------INDEX HEADER------------------------------*/
+				
+	.themePicture {
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 750px;
+		background-color: rgb(60, 116, 129);
+		background-image: url("../graphics/FIN_STACK_2F_EDITED-2 - kopie.jpg");
+		background-size: cover;
+		background-position: center top;
+		vertical-align: middle;
+	}
+	
+		.logo {
+			margin: auto;
+			display: flex;
+			align-items: center;
+			height: 500px;
+			justify-content: center;
+		}
+			
+			.nonPrintable{
+				display: block;
+			}
+			
+			.printable {
+				display: none;
+			}
+		
+		.themePicture p {
+			margin: auto;
+			vertical-align: middle;
+			text-align: center;
+			font-size: 20px;
+			color: white;
+			width: 40%;
+		}
+
+@media all and (max-width: 800px) {
+	
+	.themePicture {
+		margin-top: 0px;
+		overflow: hidden;
+		height: 700px;
+	}
+	
+		.logo{
+			margin-top: 60px;
+			width: 100%;
+			height: auto;
+		}
+		
+		.themePicture p {
+			margin-top: 260px;
+			width: 80%;
+		}
+}		
+		
+/*-------------------------------INDEX BODY------------------------------*/
+
+	
+.bar {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 400px;
+	background-color: #191919;
+	background-image: url("../graphics/hand.png");
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+	.mainInfo{
+		margin: 0px;
+		padding: 60px 30% 60px 10%;
+		width: 50%;
+		height: 280px;
+		text-align: left;
+		color: white;
+	}
+	
+		.mainInfo h2 {
+			margin: 10px 0px;
+			font-size: 50px;
+			text-transform: uppercase;
+		}
+	
+		.mainInfo p {
+			margin: 10px 0px;
+			font-size: 20px;
+		}
+	
+	#narrower {
+		height: 300px;
+	}
+	
+.welcomeBar {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 610px;
+	background-color: white;
+	background-image: url("../graphics/DSC08863.JPG");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+	.welcomeBox{
+		margin: 0px;
+		padding: 5% 0% 5% 50%;
+		width: 40%;
+		text-align: center;
+		color: #191919;
+	}
+	
+		.welcomeBox h2 {
+			text-transform: uppercase;
+			font-size: 50px;
+		}
+		
+		.welcomeBox p {
+			font-size: 20px;
+		}
+		
+		.button {
+			margin: auto;
+			display: block;
+			color: #262626;
+			text-decoration: none;
+			text-transform: uppercase;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			
+			border-radius: 4px;
+			border: none;
+			color: #FFFFFF;
+			font-size: 28px;
+			padding: 20px;
+			width: 200px;
+			transition: all 0.5s;
+		}
+		
+		.button .span1 {
+			height: 40px;
+			color: #262626;
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;
+			font-size: 28px;
+			line-height: 0px;
+		}
+		
+		.button .span2 {
+			height: 40px;
+			color: #262626;
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;
+			font-size: 28px;
+			line-height: 0px;
+		}
+		
+		.button:hover {
+			background-color: #262626;
+			color: white;
+		}
+
+		.button .span1:after {
+			content: '«';
+			position: absolute;
+			opacity: 1;
+			top: 0;
+			right: -30px;
+			transition: 0.5s;
+			color: #262626;
+			padding-right: 0px;
+		}
+		
+		.button .span2:after {
+			content: '\00bb  ';
+			position: absolute;
+			opacity: 1;
+			top: 0;
+			left: -30px;
+			transition: 0.5s;
+			color: #262626;
+			padding-left: 0px;
+		}
+
+		.button:hover .span1 {
+			padding-right: 0px;
+			color: white;
+		}
+		
+		.button:hover .span2 {
+			padding-left: 0px;
+			color: white;
+		}
+
+		.button:hover .span1:after {
+			opacity: 0;
+			right: 0;
+		}
+		
+		.button:hover .span2:after {
+			opacity: 0;
+			left: 0;
+		}
+		
+@media all and (max-width: 800px) {
+	
+	.bar {
+		background-image: none;
+		height: auto;
+	}
+	
+		.mainInfo{
+			width: 80%;
+			padding: 10%;
+			margin: auto;
+		}
+		
+	.welcomeBar {
+		background-image: none;
+		background-color: white;
+		overflow: hidden;
+		height: auto;
+	}
+			
+		.welcomeBox{
+			margin: auto;
+			padding: 10%;
+			width: 80%;
+		}
+		
+			.welcomeBox h2 {
+				margin-top: 0px;
+				margin-bottom: 20px;
+			}
+
+			.button {
+				margin: auto;
+				margin-top: 40px;
+				display: block;
+				color: white !important;
+				text-decoration: none;
+				text-transform: uppercase;
+				height: 30px;
+				line-height: 40px;
+				text-align: center;
+				background-color: #262626;
+				border-radius: 40px;
+				border: none;
+				font-size: 10px;
+				padding: 20px;
+				width: 200px;
+				transition: all 0.5s;
+			}
+			
+			.span1,
+			.span2{
+				color: white !important;
+			}
+}
+
+/*----------------------------------PORTFOLIO----------------------------------*/
+
+/*-------------------------------PORTFOLIO HEADER------------------------------*/
+
+.themePicturePortfolio {
+		margin: 0px;
+		padding: 270px 0px 0px 0px;
+		width: 100%;
+		height: 350px;
+		background-color: rgb(241,172,115);
+		background-image: url("../graphics/EX_LR_LOGO.JPG");
+		background-size: cover;
+		background-position: center top;
+		vertical-align: middle;
+	}
+	
+		.headerPortfolio{
+			margin: auto;
+			font-size: 40px;
+			border: 6px solid #191919;
+			color: #191919;
+			width: 300px;
+			height: 100px;
+			text-align: center;
+			text-transform: uppercase;
+			line-height: 0px;
+		}
+		
+@media all and (max-width: 800px) {
+	
+	.headerPortfolio{
+		color: white;
+		border: 6px solid white;
+	}	
+	
+	.themePicturePortfolio {
+		padding: 230px 0px 0px 0px;
+	}
+	
+}
+
+/*-------------------------------PORTFOLIO BODY------------------------------*/
+
+.portfolioNav{
+	width: 100%;
+	height: 120px;
+	background-color: rgb(19,19,19);
+	margin: 0px;
+	padding: 0px;
+}
+
+	.portfolioMenu {
+		width: 100%;
+		height: 120px;
+		margin: auto;
+		padding: 0px;
+	}
+	
+		.portfolioMenu ul {
+			margin: auto;
+			text-align: center;
+			padding: 30px 0px;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-end;
+		}
+		
+			.portfolioMenu li {
+				margin: auto;
+				padding: 0px 10px;
+				display: inline-block;
+				list-style-type: none;
+				text-align: center;
+			}
+			
+				.portfolioMenu a {
+					padding: 10px 15px;
+					display: inline-block;
+					text-align: center;
+					text-decoration: none;
+					font-size: 30px;
+					color: #666666;
+					letter-spacing: 5px;
+					transition: all 0.5s;
+					border: 2px solid rgb(19,19,19);
+				}
+				
+				.portfolioMenu a:hover{
+					color: #E5E5E5;
+					border: 2px solid white;
+				}
+
+@media all and (max-width: 1377px) {
+			
+	.portfolioNav {
+		height: 180px;
+	}
+}
+				
+@media all and (max-width: 800px) {
+			
+	.portfolioNav {
+		height: 500px;
+	}
+
+		.portfolioMenu ul {
+			flex-direction: column;
+			margin: auto;
+		}
+		
+			.portfolioMenu li {
+				margin: auto;
+			}
+}
+
+
+.portfolio {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+    align-items: stretch;
+}
+
+.container > * {
+	flex: 100%;
+}
+
+	.tiler{
+		margin: 0px;
+		padding: 0px;
+		width: 33.3%;
+		max-width: 33.3%;
+		min-width: 33.3%;
+		height: 550px;
+	}
+	
+	#tilerPortraits {
+		background-image: url("../graphics/DSC09081_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top center;
+		width: 66.6%;
+		max-width: 66.6%;
+		min-width: 66.6%;
+	}
+	
+	#tilerLandscape {
+		background-image: url("../graphics/DSC04365_PS_ED_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top left;
+		width: 66.6%;
+		max-width: 66.6%;
+		min-width: 66.6%;
+	}
+	
+	#tilerAstro {
+		background-image: url("../graphics/HVĚZDNÁ_CESTA_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top center;
+		width: 66.6%;
+		max-width: 66.6%;
+		min-width: 66.6%;
+	}
+
+	#tilerArchitecture {
+		background-image: url("../graphics/Z_ARCHITEKT_5_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: center;
+		width: 66.6%;
+		max-width: 66.6%;
+		min-width: 66.6%;
+	}
+	
+	#tilerProducts {
+		background-image: url("../graphics/redking_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: center;
+		width: 66.6%;
+		max-width: 66.6%;
+		min-width: 66.6%;
+	}
+	
+	#tilerFamily {
+		background-image: url("../graphics/DSC00903R_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top center;
+		width: 66.6%;
+		max-width: 66.6%;
+		min-width: 66.6%;
+	}
+	
+	#tilerReportage {
+		background-image: url("../graphics/DSC09953_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top center;
+		width: 66.6%;
+		max-width: 66.6%;
+		min-width: 66.6%;
+	}
+	
+		.tileText {
+			color: white;
+		}
+		
+			.tileTextContent {
+				margin: 15%;
+			}
+			
+				.tileTextContent h2 {
+					font-size: 35px;
+				}
+				
+				.tileTextContent p {
+					font-size: 20px;
+				}
+				
+		.tile{
+			height: 100%;
+			width: 100%;
+			transition: all 0.5s;
+			overflow: hidden;
+		}
+	
+		.tileContent {
+			max-height: 80%;
+			min-height: 80%;
+			height: 80%;
+			width: 70%;
+			padding: 10% 15%;
+			text-align: center;
+			color: white;
+			opacity: 0;
+			transition: all 0.5s;
+		}
+		
+			.tileContent h3 {
+				margin-top: 0px;
+				font-size: 40px;
+				letter-spacing: 5px;
+			}
+			
+			.tileContent p {
+				font-size: 20px;
+			}
+			
+			.tileContent a {
+				margin: auto;
+				margin-top: 60px;
+				display: block;
+				color: white;
+				text-decoration: none;
+				text-transform: uppercase;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background-color: #262626;
+				border-radius: 40px;
+				border: none;
+				font-size: 20px;
+				padding: 20px;
+				width: 220px;
+				transition: all 0.5s;
+			}
+			
+			.tileContent a:hover {
+				background-color: #262626;
+				border-radius: 4px;
+				color: white;
+			}
+		
+	.tiler:hover .tile{
+		background-color: rgba(19,19,19,0.5);
+	}
+	
+	.tiler:hover .tileContent{
+		opacity: 1;
+	}
+	
+	
+@media all and (max-width: 800px) {
+		
+	.tiler{
+		margin: 0px;
+		padding: 0px;
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+		height: 550px;
+	}
+	
+		.tileTextContent {
+				margin: 15%;
+				margin-top: 40px;
+			}
+
+		.tile {
+			background-color: rgba(19,19,19,0.5);
+		}
+		
+			.tileContent{
+				opacity: 1;
+			}
+			
+			.tileContent h3 {
+				margin-top: 60px;
+				font-size: 30px;
+				letter-spacing: 5px;
+			}
+			
+			.tileContent p {
+				font-size: 20px;
+			}
+			
+			.tileContent svg {
+				width: 140px;
+				margin: auto;
+			}
+			
+			.tileContent a {
+				width: 90px;
+				border-radius: 20px;
+				line-height: 20px;
+				height: 20px;
+				border: none;
+				font-size: 15px;
+				padding: 20px;
+			}
+
+	#tilerPortraits {
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+	}
+	
+	#tilerLandscape {
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+	}
+	
+	#tilerAstro {
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+	}
+
+	#tilerArchitecture {
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+	}
+	
+	#tilerProducts {
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+	}
+	
+	#tilerFamily {
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+		background-image: url("../graphics/DSC00903R_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top center;
+	}
+	
+	#tilerReportage {
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+	}
+	
+}
+
+
+@media all and (max-width: 450px) {
+	
+	.tileTextContent h2 {
+		font-size: 20px;
+	}
+				
+	.tileTextContent p {
+		font-size: 14px;
+	}
+
+	.tileContent svg {
+		display: none;
+	}
+
+	.tileContent h3 {
+		margin-top: 90px;
+		font-size: 20px;
+		letter-spacing: 0px;
+	}
+	
+	.tileContent p {
+		margin-top: 50px;
+		font-size: 14px;
+	}
+	
+	.tileContent a {
+		width: 90px;
+		margin: auto;
+		margin-top: 60px;
+		border-radius: 20px;
+		line-height: 20px;
+		height: 20px;
+		border: none;
+		font-size: 15px;
+		padding: 10px;
+	}
+}
+/*----------------------------------ABOUT----------------------------------*/
+
+/*-------------------------------ABOUT HEADER------------------------------*/
+
+/*--------------------------------ABOUT BODY-------------------------------*/
+	
+.mainAbout{
+	width:100%;
+	height: 665px;
+	background-color: white;
+}
+
+	.about{
+		margin: 0px;
+		padding: 0px 0px 0px 0px;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(255,255,255,0.9);
+	}
+	
+		.aboutContent{
+			margin: auto;
+			padding: 0px;
+			width: 80%;
+			height: 100%;
+			position: relative;
+		}
+	
+			.leftAboutContent{
+				padding: 20px 20px 0px 20px;
+				margin: auto;
+				float: left;
+				width: 400px;
+				height: 500px;
+				background-color: white;
+				position: absolute;
+				bottom: 0;
+				
+			}
+			
+				.aboutImageFrame{
+					width: 100%;
+					height: 100%;
+				}
+			
+					.leftAboutContent img {
+						width: 100%;
+						height: 100%;
+						
+					}
+			
+			.rightAboutContent{
+				padding: 100px 20px 40px 20px;
+				float: right;
+				width: 50%;
+				height: auto;
+			}
+				
+				.rightAboutContent h2 {
+					font-size: 40px;
+				}
+				
+				.rightAboutContent h3 {
+					font-size: 28px;
+				}
+			
+				.rightAboutContent p {
+					font-size: 20px;
+				}
+			
+			.rightAboutContent .button {
+				margin: auto;
+				margin-top: 40px;
+				display: block;
+				color: white;
+				text-decoration: none;
+				text-transform: uppercase;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background-color: #262626;
+				border-radius: 40px;
+				border: none;
+				font-size: 28px;
+				padding: 20px;
+				width: 200px;
+				transition: all 0.5s;
+			}
+			
+			.rightAboutContent .button:hover {
+				background-color: #262626;
+				border-radius: 4px;
+				color: white;
+			}
+
+@media all and (max-width: 1200px) {
+	
+	.mainAbout{
+		height: 750px;
+	}
+	
+		.about{
+			min-height: 100%;
+		}
+	
+			.aboutContent{
+				width: 90%;
+				height: 100%;
+			}
+			
+				.rightAboutContent{
+					width: 35%;
+				}
+	
+}
+
+@media all and (max-width: 800px) {
+	
+	.mainAbout{
+		height: 1000px;
+	}
+	
+		.about{
+			margin: 0px;
+			padding: 0px;
+			height: 900px;
+			width: 100%;
+		}
+		
+			.aboutContent{
+					margin: 0px;
+					padding: 0px;
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+				}
+			
+					.leftAboutContent{
+						padding: 0px;
+						float: none;
+						width: 100%;
+						height: 375px;
+						margin-top: 50px;
+					}
+					
+						.aboutImageFrame{
+							width: 300px;
+							height: 100%;
+							margin: auto;
+						}
+					
+							.leftAboutContent img {
+								width: 100%;
+								height: 100%;
+								position: relative;
+								margin: auto;
+								
+							}
+					
+					.rightAboutContent{
+						margin: auto;
+						margin-top: 60px;
+						padding: 0px;
+						float: none;
+						width: 80%;
+						height: auto;
+					}
+					
+					.rightAboutContent .button {
+						margin: auto;
+						margin-top: 40px;
+						display: block;
+						color: white;
+						text-decoration: none;
+						text-transform: uppercase;
+						height: 30px;
+						line-height: 30px;
+						text-align: center;
+						background-color: #262626;
+						border-radius: 40px;
+						border: none;
+						font-size: 18px;
+						padding: 20px;
+						width: 200px;
+						transition: all 0.5s;
+					}
+				
+
+	
+}
+
+/*----------------------------------KONTAKT----------------------------------*/
+
+/*-------------------------------KONTAKT HEADER------------------------------*/
+
+/*--------------------------------KONTAKT BODY-------------------------------*/
+
+.mainContact{
+	width:100%;
+	height: 100%;
+	background-color: white;
+	background-image: url("../graphics/STACK_1_ED.JPG");
+	background-position: center;
+	background-size: cover;
+}
+
+	.contact{
+		margin: 0px;
+		padding: 80px 0px 0px 0px;
+		height: 585px;
+		width: 100%;
+		background-color: rgba(255,255,255,0.8);
+	}
+
+		.aboutContactContent{
+			margin: auto;
+			padding: 0px;
+			width: 80%;
+			height: 500px;
+		}
+	
+			.leftContactContent{
+				padding-top: 13%;
+				padding-right: 0%;
+				padding-left: 10%;
+				padding-bottom: 0%;
+				float: left;
+				width: 30%;
+				height: 50%;
+				position: static;		
+			}
+			
+				.leftContactContent img {
+					width: 100%;
+					height: 100%;
+					
+				}
+			
+			.rightContactContent{
+				padding: 10%;
+				padding-right: 10%;
+				padding-left: 0%;
+				float: right;
+				width: auto;
+				height: auto;
+			}
+			
+				.rightContactContent h2 {
+					margin-top: 0px;
+					font-size: 40px;
+				}
+				
+				.rightAboutContent h3 {
+					font-size: 30px;
+				}
+			
+				.rightContactContent a{
+					text-decoration: none;
+					color: #191919;
+				}
+
+@media all and (max-width: 800px) {
+	
+.mainContact{
+	max-height: 632px;
+	min-height: 632px;
+	height: 632px;
+	overflow: hidden;
+}
+	
+	.contact {
+		padding: 0px 0px 0px 0px;
+		max-height: 100%;
+		min-height: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+			.leftContactContent {
+				display: none;
+			}
+			
+				.leftContactContent img {
+					display: none;
+				}
+					
+			.rightContactContent{
+						padding: 0px 0px 0px 0px;
+						width: 100%;
+						height: 100%;
+						margin: auto;
+						margin-top: 150px;
+						float: none;
+					}				
+}
+
+
+/*----------------------------------NEWS----------------------------------*/
+
+/*-------------------------------NEWS HEADER------------------------------*/
+
+.themePictureNews {
+		margin: 0px;
+		padding: 270px 0px 0px 0px;
+		width: 100%;
+		height: 350px;
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/DSC01222_PS.JPG");
+		background-size: cover;
+		background-position: center top;
+		vertical-align: middle;
+	}
+	
+		.headerNews{
+			margin: auto;
+			font-size: 40px;
+			border: 6px solid #191919;
+			color: #191919;
+			width: 300px;
+			height: 100px;
+			text-align: center;
+			text-transform: uppercase;
+			line-height: 0px;
+		}
+
+@media all and (max-width: 800px) {
+	
+	.themePictureNews {
+		padding: 230px 0px 0px 0px;
+	}
+}
+
+/*--------------------------------NEWS BODY-------------------------------*/
+
+.newsNav{
+	width: 100%;
+	height: 120px;
+	background-color: rgb(19,19,19);
+	margin: 0px;
+	padding: 0px;
+}
+
+	.newsMenu {
+		width: 100%;
+		height: 120px;
+		margin: auto;
+		padding: 0px;
+	}
+	
+		.newsMenu ul {
+			margin: auto;
+			text-align: center;
+			padding: 30px 0px;
+			display: block;
+		}
+		
+			.newsMenu  li {
+				margin: auto;
+				padding: 0px 80px;
+				display: inline-block;
+				list-style-type: none;
+				text-align: center;
+			}
+			
+				.newsMenu  a {
+					padding: 10px 15px;
+					display: inline-block;
+					text-align: center;
+					text-decoration: none;
+					font-size: 30px;
+					color: #666666;
+					letter-spacing: 5px;
+					transition: all 0.5s;
+					border: 2px solid rgb(19,19,19);
+				}
+				
+				.newsMenu  a:hover{
+					color: #E5E5E5;
+					border: 2px solid white;
+				}
+
+@media all and (max-width: 800px) {
+			
+	.newsNav {
+		height: 180px;
+	}
+
+		.newsMenu ul {
+			flex-direction: column;
+			margin: auto;
+		}
+		
+			.newsMenu li {
+				margin: auto;
+				width: 100%;
+				padding: 0px;
+			}
+}
+
+.justStripe{
+	width: 100%;
+	height: 20px;
+	background-color: rgb(19,19,19);
+	margin: 0px;
+	padding: 0px;
+}
+			
+.news {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+    align-items: stretch;
+	background-color: #191919;
+	justify-content: flex-end;
+}	
+
+	.newsTileTitle {
+		margin: 0px;
+		padding: 0% 0% 0% 0%;
+		width: 10%;
+		max-width: 10%;
+		min-width: 10%;
+		max-height: 450px;
+		min-height: 450px;
+		position: absolute; 
+		left: 0; 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+		.newsTileTitle h2 {
+			transform: rotate(270deg);
+			margin: 0% 0% 0% 0%;
+			padding: 0%;
+			text-align: center;
+			color: #E5E5E5;
+			font-size: 40px;
+			letter-spacing: 8px;
+			text-transform: uppercase;
+			max-width: 450px;
+			min-width: 450px;
+			width: 450px;
+		}
+		
+	.newsTiler{
+		margin: 0px;
+		padding: 0px;
+		width: 90%;
+		max-width: 90%;
+		min-width: 90%;
+		height: 450px;
+		max-height: 450px;
+		min-height: 450px;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: stretch;
+		background-color: #191919;
+		justify-content: flex-start;
+	}
+	
+		.newsTile{
+			height: 100%;
+			width: 50%;
+		}
+	
+	#newsTilerLecture {
+		background-image: url("../graphics/DSC04732_PS_ED_2E_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top center;
+	}
+	
+	#newsTilerExhibition {
+		background-image: url("../graphics/MRAZIVÉ NEBE_nahled_700px_72dpi.jpg");
+		background-size: cover;
+		background-position: top center;
+	}
+	
+		.newsTileSpace {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255,255,255,0.8);
+			overflow: hidden;
+		}
+		
+			.newsTileContent {
+					height: 80%;
+					width: 70%;
+					margin: 10% 15%;
+				/*	border: 1px solid yellow;*/
+					text-align: center;
+					color: white;
+					transition: all 0.5s;
+					color: #191919;
+				}
+				
+					.newsTileContent h3 {
+						font-size: 30px;
+						letter-spacing: 3px;
+						padding: 0px;
+						margin: 0px;
+						margin-top: 10px;
+					}
+					
+					.newsTileContent p {
+						padding: 0px;
+						margin: 0px;
+						font-size: 20px;
+						margin-bottom: 20px;
+					}
+					
+					.newsTileContent h4 {
+						padding: 0px;
+						margin: 10px;
+					}
+					
+					.newsTileContent svg {
+						padding: 0px;
+						margin: 40px auto;
+						text-align: center;
+					}
+					
+					.newsTileContent a {
+						margin: auto;
+						margin-top: 60px;
+						display: block;
+						color: white;
+						text-decoration: none;
+						text-transform: uppercase;
+						height: 40px;
+						line-height: 40px;
+						text-align: center;
+						background-color: #262626;
+						border-radius: 40px;
+						border: none;
+						font-size: 20px;
+						padding: 20px;
+						width: 200px;
+						transition: all 0.5s;
+					}
+
+@media all and (max-width: 800px) {
+	
+	.newsTiler{
+		width: 70%;
+		max-width: 70%;
+		min-width: 70%;
+	}
+	
+	.newsTileTitle {
+		margin: 0px;
+		padding: 0% 0% 0% 0%;
+		width: 30%;
+		max-width: 30%;
+		min-width: 30%;
+	}
+		
+		.newsTile{
+			height: 100%;
+			width: 100%;
+			max-width: 100%;
+			min-width: 100%;
+		}
+		
+			.newsTileSpace {
+				height: 100%;
+				width: 100%;
+				max-width: 100%;
+				min-width: 100%;
+			}
+			
+			
+					.newsTileContent h3 {
+						font-size: 30px;
+						letter-spacing: 2px;
+						margin-top: 20px;
+						padding-top: 10px;
+					}
+					
+					.newsTileContent p {
+						font-size: 20px;
+						margin-bottom: 20px;
+					}
+					
+					.newsTileContent h4 {
+						padding: 0px;
+						margin: 10px;
+					}
+					
+					.newsTileContent svg {
+						margin: 40px auto;
+					}
+					
+}
+
+@media all and (max-width: 380px) {
+			
+	.newsTileContent h3 {
+		font-size: 25px;
+		letter-spacing: 2px;
+		margin-top: 20px;
+		padding-top: 10px;
+	}
+	
+	.newsTileContent p {
+		font-size: 15px;
+		margin-bottom: 20px;
+	}
+	
+	.newsTileContent h4 {
+		padding: 0px;
+		margin: 10px;
+	}
+					
+}
+
+/*-------------------------------KRAJINA HEADER------------------------------*/
+
+.themePictureAlbum {
+	margin: 0px;
+	padding: 110px 0px 0px 0px;
+	width: 100%;
+	height: 160px;
+	background-color: rgb(241,172,115);
+	background-image: url("../graphics/album.JPG");
+	background-size: cover;
+	background-position: center top;
+	vertical-align: middle;
+}
+
+/*	
+	#krajinaTheme {
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/DSC04365_PS_ED.JPG");
+		background-size: cover;
+		background-position: center top;
+	}
+	
+	#hvezdyTheme {
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/HVĚZDNÁ CESTA.jpg");
+		background-size: cover;
+		background-position: center top;
+	}
+	
+	#portretTheme {
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/DSC09081.JPG");
+		background-size: cover;
+		background-position: center top;
+	}
+	
+	#architekturaTheme {
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/Z_ARCHITEKT_5.jpg");
+		background-size: cover;
+		background-position: center top;
+	}
+	
+	#komercniTheme {
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/redking.JPG");
+		background-size: cover;
+		background-position: center top;
+	}
+	
+	#rodinneTheme {
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/DSC00903.jpg");
+		background-size: cover;
+		background-position: center top;
+	}
+	
+	#reportazTheme {
+		background-color: rgb(145,189,218);
+		background-image: url("../graphics/DSC09953.jpg");
+		background-size: cover;
+		background-position: center top;
+	}
+*/	
+		.headerAlbum{
+			margin: auto;
+			font-size: 40px;
+			border: 6px solid #191919;
+			color: #191919;
+			width: 300px;
+			height: 100px;
+			text-align: center;
+			text-transform: uppercase;
+			line-height: 0px;
+		}
+		
+		#architekturaTheme h2{
+			font-size: 44px;
+			line-height: 30px;
+		}
+
+@media all and (max-width: 800px) {
+	
+	.themePictureAlbum {
+		padding: 50px 0px 0px 0px;
+		background-image: url("../graphics/albumR.jpg");
+		background-size: cover;
+		background-position: center bottom;
+		vertical-align: middle;
+	}
+}
+
+/*--------------------------------KRAJINA BODY-------------------------------*/
+
+
+
+.justStripeAlbum{
+	width: 100%;
+	height: 20px;
+	background-color: rgb(19,19,19);
+	margin: 0px;
+	padding: 0px;
+}
+			
+.album {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+	.responsiveImageAlbum{
+		margin: auto;
+		width: 33%;
+		height: auto;
+	}
+	
+		.responsiveImageAlbum img {
+			width: 100%;
+			height: 100%;
+		}
+
+@media all and (max-width: 800px) {
+	
+	.responsiveImageAlbum{
+		margin: auto;
+		width: 50%;
+		height: auto;
+	}
+		
+}
+		
+/*-----------------------------FOOTER---------------------------*/
+		
+.footLine {
+	margin: 0px;
+	padding: 0px;
+	background-color: #262626;
+	color: white;
+	width: 100%;
+	height: 65px;
+	text-transform: uppercase;
+	position: static; 
+	bottom: 0; 
+}
+
+	.leftFootLine {
+		float: left;
+		width: 50%;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+		.leftFootLine h2 {
+			margin: 0px;
+			padding: 20px 60px;
+			font-size: 20px;
+			font-weight: normal;
+		}
+		
+			.responsiveBreakLine{
+				display: none;
+			}
+	
+	.rightFootLine {
+		margin: 0px;
+		padding: 0px;
+		float: right;
+		width: 50%;
+		font-size: 20px;
+	}
+		
+		.socialSites ul {
+			margin: 0px;
+			padding: 15px 60px;
+			display: block;
+			float: right;
+		}
+		
+			.socialSites li {
+				margin: 0px;
+				padding: 0px 10px;
+				display: inline-block;
+				list-style-type: none;
+			}
+			
+				.socialSites a {
+					display: inline-block;
+					text-decoration: none;
+					color: #E5E5E5;
+					letter-spacing: 5px;
+				}
+				
+@media all and (max-width: 1400px) {
+			
+	.footLine {
+		height: 140px;
+		margin: auto;
+		width: 100%;
+		text-align: center;
+		padding: 20px 0px;
+	}
+
+			.leftFootLine {
+				width: 100%;
+				margin: auto;
+				float: none;
+			}
+				
+				.leftFootLine h2 {
+					font-weight: normal;
+				}
+			
+				.responsiveBreakLine{
+					display: inline;
+				}
+			
+			.rightFootLine {
+				width: 100%;
+				margin: auto;
+				float: none;
+			}
+			
+				.socialSites ul {
+				margin: auto;
+				padding: 0px;
+				float: none;
+			}
+}
+
+@media all and (max-width: 400px) {
+			
+	.footLine {
+		height: 180px;
+	}
+
+}
